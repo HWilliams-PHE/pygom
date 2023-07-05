@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Hard Problem &#8212; PyGOM documentation</title>
+    <title>.SIS &#8212; PyGOM documentation</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/unroll/unrollHard';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/common_models/SIS';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Simple Epidemic Analysis" href="../epi.html" />
-    <link rel="prev" title="ODE With Birth and Death Process" href="unrollBD.html" />
+    <link rel="next" title=".SIS_Periodic" href="SIS_Periodic.html" />
+    <link rel="prev" title="Pre-defined Example common_models {#common_models}" href="../../md/common_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,16 +159,16 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../transition.html">Transition Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/unrollOde.html">Convert ODE into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="unrollSimple.html">Simple Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unrollBD.html">ODE With Birth and Death Process</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hard Problem</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../epi.html">Simple Epidemic Analysis</a></li>
@@ -182,10 +182,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../profile.html">Confidence Interval of Estimated Parameters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fnotebooks/unroll/unrollHard.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fnotebooks/common_models/SIS.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/notebooks/unroll/unrollHard.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/common_models/SIS.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hard Problem</h1>
+    <h1>.SIS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,65 +383,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hard-problem">
-<h1>Hard Problem<a class="headerlink" href="#hard-problem" title="Permalink to this heading">#</a></h1>
-<p>Now we turn to a harder problem that does not have a one to one mapping
-between all the transitions and the terms in the ODEs. We use the model
-in <code class="docutils literal notranslate"><span class="pre">Influenza_SLIARN</span></code>, defined by</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sis">
+<h1><code class="docutils literal notranslate"><span class="pre">.SIS</span></code><a class="headerlink" href="#sis" title="Permalink to this heading">#</a></h1>
+<p>A standard SIS model without the total population <span class="math notranslate nohighlight">\(N\)</span>. We assume here
+that <span class="math notranslate nohighlight">\(S + I = N\)</span> so we can always normalize to 1. Evidently, the state
+<span class="math notranslate nohighlight">\(S\)</span> is not required for understanding the model because it is a
+deterministic function of state <span class="math notranslate nohighlight">\(I\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-\frac{dS}{dt} &amp;= -S \beta (I + \delta A) \\    
-\frac{dL}{dt} &amp;= S \beta (I + \delta A) - \kappa L \\  
-\frac{dI}{dt} &amp;= p \kappa L - \alpha I \\
-\frac{dA}{dt} &amp;= (1 - p) \kappa L - \eta A \\
-\frac{dR}{dt} &amp;= f \alpha I + \eta A \\
-\frac{dN}{dt} &amp;= -(1 - f) \alpha I.
+\frac{dS}{dt} &amp;=  -\beta S I + \gamma I \\
+\frac{dI}{dt} &amp;= \beta S I - \gamma I.
 \end{aligned}\end{split}\]</div>
-<p>The outflow of state <strong>L</strong>, <span class="math notranslate nohighlight">\(\kappa L\)</span>, is composed of two transitions,
-one to <strong>I</strong> and the other to <strong>A</strong> but the ode of <strong>L</strong> only reflects
-the total flow going out of the state. Same can be said for state <strong>I</strong>,
-where the flow <span class="math notranslate nohighlight">\(\alpha I\)</span> goes to both <strong>R</strong> and <strong>N</strong>. Graphically, it
-is a rather simple process as shown below.</p>
-<p>digraph SLIARD_Model {<br />
-labelloc = “t”; label = “Original transitions”; rankdir=LR; size=”8”
-node [shape = circle]; S -&gt; L [ label = “-Sβ(I + δA)/N” ]; L -&gt; I
-[ label = “κLp” ]; L -&gt; A [ label = “κL(1-p)” ]; I -&gt; R [ label =
-“αIf” ]; I -&gt; D [ label = “αI(1-f)” ]; A -&gt; R [ label = “ηA” ];</p>
-<p>}</p>
-<p>We slightly change the model by introducing a new state <strong>D</strong> to convert
-it into a closed system. The combination of state <strong>D</strong> and <strong>N</strong> is a
-constant, the total population. So we can remove <strong>N</strong> and this new
-system consist of six transitions. We define them explicitly as ODEs and
-unroll them into transitions.</p>
-<p>In [1]: from pygom import SimulateOde, Transition, TransitionType</p>
-<p>In [1]: stateList = [‘S’, ‘L’, ‘I’, ‘A’, ‘R’, ‘D’]</p>
-<p>In [2]: paramList = [‘beta’, ‘p’, ‘kappa’, ‘alpha’, ‘f’, ‘delta’,
-‘epsilon’, ‘N’]</p>
-<p>In [3]: odeList = [<br />
-…: Transition(origin=’S’, equation=’- beta*S/N*(I + delta*A)’,
-transition_type=TransitionType.ODE), …: Transition(origin=’L’,
-equation=’beta*S/N*(I + delta*A) - kappa*L’,
-transition_type=TransitionType.ODE), …: Transition(origin=’I’,
-equation=’p*kappa*L - alpha*I’, transition_type=TransitionType.ODE),
-…: Transition(origin=’A’, equation=’(1 - p)<em>kappa</em> L - epsilon*A’,
-transition_type=TransitionType.ODE), …: Transition(origin=’R’,
-equation=’f*alpha*I + epsilon*A’,
-transition_type=TransitionType.ODE), …: Transition(origin=’D’,
-equation=’(1 - f)<em>alpha</em>I’, transition_type=TransitionType.ODE) ]</p>
-<p>In [4]: ode = SimulateOde(stateList, paramList, ode=odeList)</p>
-<p>In [5]: ode.get_transition_matrix()</p>
-<p>In [6]: ode2 = ode.get_unrolled_obj()</p>
-<p>In [7]: ode2.get_transition_matrix()</p>
-<p>In [8]: ode2.get_ode_eqn()</p>
-<p>After unrolling the odes, we have the following transition graph</p>
-<p>&#64;savefig sir_unrolled_transition_graph_hard.png In [1]:
-ode2.get_transition_graph()</p>
-<p>In [2]: plt.close()</p>
-<p>In [3]: print(sum(ode.get_ode_eqn() - ode2.get_ode_eqn()).simplify())
-# difference</p>
-<p>which is exactly the same apart from slightly weird arrangement of
-symbols in some of the equations. The last line with a value of zero
-also reaffirms the result.</p>
+<p>An example would be</p>
+<p>In [1]: from pygom import common_models</p>
+<p>In [1]: import matplotlib.pyplot as plt</p>
+<p>In [1]: import numpy</p>
+<p>In [1]: ode = common_models.SIS({‘beta’:0.5,’gamma’:0.2})</p>
+<p>In [1]: t = numpy.linspace(0, 20, 101)</p>
+<p>In [1]: x0 = [1.0, 0.1]</p>
+<p>In [1]: ode.initial_values = (x0, t[0])</p>
+<p>In [1]: solution = ode.integrate(t[1::])</p>
+<p>&#64;savefig common_models_sis.png In [1]: ode.plot()</p>
+<p>In [1]: plt.close()</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -457,7 +420,7 @@ also reaffirms the result.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/unroll"
+            path: "./notebooks/common_models"
         },
         predefinedOutput: true
     }
@@ -476,20 +439,20 @@ also reaffirms the result.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="unrollBD.html"
+       href="../../md/common_models.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ODE With Birth and Death Process</p>
+        <p class="prev-next-title">Pre-defined Example common_models {#common_models}</p>
       </div>
     </a>
     <a class="right-next"
-       href="../epi.html"
+       href="SIS_Periodic.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple Epidemic Analysis</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

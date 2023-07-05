@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Convert ODE into transitions &#8212; PyGOM documentation</title>
+    <title>Pre-defined Example common_models {#common_models} &#8212; PyGOM documentation</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'md/unrollOde';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'md/common_models';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simple Problem" href="../notebooks/unroll/unrollSimple.html" />
-    <link rel="prev" title="Stochastic representation of ODEs" href="../notebooks/stochastic.html" />
+    <link rel="next" title=".SIS" href="../notebooks/common_models/SIS.html" />
+    <link rel="prev" title="Confidence Interval of Estimated Parameters" href="../notebooks/profile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,13 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Transition Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Convert ODE into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">Simple Problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
@@ -180,8 +180,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/profile.html">Confidence Interval of Estimated Parameters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Pre-defined Example common_models {#common_models}</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
 </ul>
@@ -257,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/unrollOde.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/common_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/md/unrollOde.md" target="_blank"
+      <li><a href="../_sources/md/common_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convert ODE into transitions</h1>
+    <h1>Pre-defined Example common_models {#common_models}</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,15 +381,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="convert-ode-into-transitions">
-<h1>Convert ODE into transitions<a class="headerlink" href="#convert-ode-into-transitions" title="Permalink to this heading">#</a></h1>
-<p>As seen previously in <code class="docutils literal notranslate"><span class="pre">transition</span></code>{.interpreted-text role=”ref”}, we can
-define the model via the transitions or explicitly as ODEs. There are
-times when we all just want to test out some model in a paper and the
-only available information are the ODEs themselves. Even though we know
-that the ODEs come from some underlying transitions, breaking them down
-can be a time consuming process. We provide the functionalities to do
-this automatically.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pre-defined-example-common-models-common-models">
+<h1>Pre-defined Example common_models {#common_models}<a class="headerlink" href="#pre-defined-example-common-models-common-models" title="Permalink to this heading">#</a></h1>
+<p>We have defined a set of models <code class="docutils literal notranslate"><span class="pre">common_models</span></code>{.interpreted-text
+role=”mod”}, most of them commonly used in epidemiology. They are there
+as examples and also save time for end users. Most of them are of the
+compartmental type, and we use standard naming conventions i.e. <strong>S</strong> =
+Susceptible, <strong>E</strong> = Exposed, <strong>I</strong> = Infectious, <strong>R</strong> = Recovered.
+Extra state symbol will be introduced when required.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -426,20 +425,20 @@ this automatically.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notebooks/stochastic.html"
+       href="../notebooks/profile.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stochastic representation of ODEs</p>
+        <p class="prev-next-title">Confidence Interval of Estimated Parameters</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/unroll/unrollSimple.html"
+       href="../notebooks/common_models/SIS.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple Problem</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

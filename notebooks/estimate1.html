@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Convert ODE into transitions &#8212; PyGOM documentation</title>
+    <title>Example: Parameter Estimation 1 &#8212; PyGOM documentation</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'md/unrollOde';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/estimate1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simple Problem" href="../notebooks/unroll/unrollSimple.html" />
-    <link rel="prev" title="Stochastic representation of ODEs" href="../notebooks/stochastic.html" />
+    <link rel="next" title="Example: Parameter Estimation 2" href="estimate2.html" />
+    <link rel="prev" title="Example: Fitz Hugh" href="fh.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,31 +161,31 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Transition Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Convert ODE into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">Simple Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transition.html">Transition Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stochastic.html">Stochastic representation of ODEs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/epi.html">Simple Epidemic Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/bvpSimple.html">Solving Boundary Value Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/gradient.html">Gradient estimation under square loss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/fh.html">Example: Fitz Hugh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/estimate1.html">Example: Parameter Estimation 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/estimate2.html">Example: Parameter Estimation 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/initialGuess.html">Obtaining good initial value for parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/profile.html">Confidence Interval of Estimated Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epi.html">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fh.html">Example: Fitz Hugh</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example: Parameter Estimation 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estimate2.html">Example: Parameter Estimation 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialGuess.html">Obtaining good initial value for parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profile.html">Confidence Interval of Estimated Parameters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -257,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/unrollOde.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fnotebooks/estimate1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/md/unrollOde.md" target="_blank"
+      <li><a href="../_sources/notebooks/estimate1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -356,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -367,11 +371,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convert ODE into transitions</h1>
+    <h1>Example: Parameter Estimation 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-under-square-loss">Estimation under square loss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sir-model">SIR Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-in-gradient">Difference in gradient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-result">Optimized result</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,17 +398,98 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="convert-ode-into-transitions">
-<h1>Convert ODE into transitions<a class="headerlink" href="#convert-ode-into-transitions" title="Permalink to this heading">#</a></h1>
-<p>As seen previously in <code class="docutils literal notranslate"><span class="pre">transition</span></code>{.interpreted-text role=”ref”}, we can
-define the model via the transitions or explicitly as ODEs. There are
-times when we all just want to test out some model in a paper and the
-only available information are the ODEs themselves. Even though we know
-that the ODEs come from some underlying transitions, breaking them down
-can be a time consuming process. We provide the functionalities to do
-this automatically.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="example-parameter-estimation-1">
+<h1>Example: Parameter Estimation 1<a class="headerlink" href="#example-parameter-estimation-1" title="Permalink to this heading">#</a></h1>
+<section id="estimation-under-square-loss">
+<h2>Estimation under square loss<a class="headerlink" href="#estimation-under-square-loss" title="Permalink to this heading">#</a></h2>
+<p>To ease the estimation process when given data, a separate module
+<code class="docutils literal notranslate"><span class="pre">ode_loss</span></code> has been constructed for observations coming from a single
+state. We demonstrate how to do it via two examples, first, a standard
+SIR model, then the Legrand SEIHFR model from <span class="xref myst">[Legrand2007]</span> used
+for Ebola in <code class="docutils literal notranslate"><span class="pre">estimate2</span></code>.</p>
+<section id="sir-model">
+<h3>SIR Model<a class="headerlink" href="#sir-model" title="Permalink to this heading">#</a></h3>
+<p>We set up an SIR model as seen previously in <code class="docutils literal notranslate"><span class="pre">sir</span></code>.</p>
+<p>In [176]: from pygom import SquareLoss, common_models</p>
+<p>In [179]: import numpy</p>
+<p>In [180]: import scipy.integrate</p>
+<p>In [184]: import matplotlib.pyplot</p>
+<p>In [185]: # Again, standard SIR model with 2 parameter. See the first
+script!</p>
+<p>In [191]: # define the parameters</p>
+<p>In [192]: paramEval = [(‘beta’,0.5), (‘gamma’,1.0/3.0)]</p>
+<p>In [189]: # initialize the model</p>
+<p>In [190]: ode = common_models.SIR(paramEval)</p>
+<p>and we assume that we have perfect information about the <span class="math notranslate nohighlight">\(R\)</span>
+compartment.</p>
+<p>In [196]: x0 = [1, 1.27e-6, 0]</p>
+<p>In [197]: # Time, including the initial time t0 at t=0</p>
+<p>In [198]: t = numpy.linspace(0, 150, 1000)</p>
+<p>In [200]: # Standard. Find the solution.</p>
+<p>In [201]: solution = scipy.integrate.odeint(ode.ode, x0, t)</p>
+<p>In [202]: y = solution[:,1:3].copy()</p>
+<p>Initialize the class with some initial guess</p>
+<p>In [209]: # our initial guess</p>
+<p>In [210]: theta = [0.2, 0.2]</p>
+<p>In [176]: objSIR = SquareLoss(theta, ode, x0, t[0], t[1::],
+y[1::,:], [‘I’,’R’])</p>
+<p>Note that we need to provide the initial values, <span class="math notranslate nohighlight">\(x_{0}\)</span> and <span class="math notranslate nohighlight">\(t_{0}\)</span>
+differently to the observations <span class="math notranslate nohighlight">\(y\)</span> and the corresponding time <span class="math notranslate nohighlight">\(t\)</span>.
+Additionally, the state which the observation lies needs to be
+specified. Either a single state, or multiple states are allowed, as
+seen above.</p>
+</section>
+<section id="difference-in-gradient">
+<h3>Difference in gradient<a class="headerlink" href="#difference-in-gradient" title="Permalink to this heading">#</a></h3>
+<p>We have provided two different ways of obtaining the gradient, these are
+explained in <code class="docutils literal notranslate"><span class="pre">gradient</span></code> in a bit more detail. First, lets see how
+similar the output of the two methods are</p>
+<p>In [22]: objSIR.sensitivity()</p>
+<p>In [25]: objSIR.adjoint()</p>
+<p>and the time required to obtain the gradient for the SIR model under
+<span class="math notranslate nohighlight">\(\theta = (0.2,0.2)\)</span>, previously entered.</p>
+<p>In [22]: %timeit objSIR.sensitivity()</p>
+<p>In [25]: %timeit objSIR.adjoint()</p>
+<p>Obviously, the amount of time taken for both method is dependent on the
+number of observations as well as the number of states. The effect on
+the adjoint method as the number of observations differs can be quite
+evident. This is because the adjoint method is under a discretization
+which loops in Python where as the forward sensitivity equations are
+solved simply via an integration. As the number of observation gets
+larger, the affect of the Python loop becomes more obvious.</p>
+<p>Difference in gradient is larger when there are less observations. This
+is because the adjoint method use interpolations on the output of the
+ode between each consecutive time points. Given solution over the same
+length of time, fewer discretization naturally leads to a less accurate
+interpolation. Note that the interpolation is currently performed using
+univaraite spline, due to the limitation of python packages. Ideally,
+one would prefer to use an (adaptive) Hermite or Chebyshev
+interpolation. Note how we ran the two gradient functions once before
+timing it, that is because we only find the properties (Jacobian,
+gradient) of the ode during runtime.</p>
+</section>
+<section id="optimized-result">
+<h3>Optimized result<a class="headerlink" href="#optimized-result" title="Permalink to this heading">#</a></h3>
+<p>Then standard optimization procedures with some suitable initial guess
+should yield the correct result. It is important to set the boundaries
+for compartmental models as we know that all the parameters are strictly
+positive. We put a less restrictive inequality here for demonstration
+purpose.</p>
+<p>In [211]: # what we think the bounds are</p>
+<p>In [212]: boxBounds = [(0.0,2.0),(0.0,2.0)]</p>
+<p>Then using the optimization routines in <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, for example,
+the <em>SLSQP</em> method with the gradient obtained by forward sensitivity.</p>
+<p>In [208]: from scipy.optimize import minimize</p>
+<p>In [213]: res = minimize(fun=objSIR.cost,<br />
+.….: jac=objSIR.sensitivity, .….: x0=theta, .….: bounds=boxBounds, .….:
+method=’SLSQP’)</p>
+<p>In [214]: print(res)</p>
+<p>Other methods available in <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> can also be used,
+such as the <em>L-BFGS-B</em> and <em>TNC</em>. We can also use methods that accepts
+the exact Hessian such as <em>trust-ncg</em> but that should not be necessary
+most of the time.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -407,7 +505,7 @@ this automatically.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./md"
+            path: "./notebooks"
         },
         predefinedOutput: true
     }
@@ -426,20 +524,20 @@ this automatically.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notebooks/stochastic.html"
+       href="fh.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stochastic representation of ODEs</p>
+        <p class="prev-next-title">Example: Fitz Hugh</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/unroll/unrollSimple.html"
+       href="estimate2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple Problem</p>
+        <p class="prev-next-title">Example: Parameter Estimation 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -452,6 +550,25 @@ this automatically.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-under-square-loss">Estimation under square loss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sir-model">SIR Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-in-gradient">Difference in gradient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-result">Optimized result</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

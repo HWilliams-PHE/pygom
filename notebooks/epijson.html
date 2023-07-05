@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Convert ODE into transitions &#8212; PyGOM documentation</title>
+    <title>Reading and using EpiJSON data &#8212; PyGOM documentation</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'md/unrollOde';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/epijson';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simple Problem" href="../notebooks/unroll/unrollSimple.html" />
-    <link rel="prev" title="Stochastic representation of ODEs" href="../notebooks/stochastic.html" />
+    <link rel="next" title="Solving Boundary Value Problems" href="bvpSimple.html" />
+    <link rel="prev" title="Simple Epidemic Analysis" href="epi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,31 +161,31 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Transition Object</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Convert ODE into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">Simple Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transition.html">Transition Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stochastic.html">Stochastic representation of ODEs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/epi.html">Simple Epidemic Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/bvpSimple.html">Solving Boundary Value Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/gradient.html">Gradient estimation under square loss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/fh.html">Example: Fitz Hugh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/estimate1.html">Example: Parameter Estimation 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/estimate2.html">Example: Parameter Estimation 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/initialGuess.html">Obtaining good initial value for parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/profile.html">Confidence Interval of Estimated Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epi.html">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading and using EpiJSON data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fh.html">Example: Fitz Hugh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estimate1.html">Example: Parameter Estimation 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estimate2.html">Example: Parameter Estimation 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialGuess.html">Obtaining good initial value for parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profile.html">Confidence Interval of Estimated Parameters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -257,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/unrollOde.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fnotebooks/epijson.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/md/unrollOde.md" target="_blank"
+      <li><a href="../_sources/notebooks/epijson.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -367,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convert ODE into transitions</h1>
+    <h1>Reading and using EpiJSON data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,17 +383,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="convert-ode-into-transitions">
-<h1>Convert ODE into transitions<a class="headerlink" href="#convert-ode-into-transitions" title="Permalink to this heading">#</a></h1>
-<p>As seen previously in <code class="docutils literal notranslate"><span class="pre">transition</span></code>{.interpreted-text role=”ref”}, we can
-define the model via the transitions or explicitly as ODEs. There are
-times when we all just want to test out some model in a paper and the
-only available information are the ODEs themselves. Even though we know
-that the ODEs come from some underlying transitions, breaking them down
-can be a time consuming process. We provide the functionalities to do
-this automatically.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="reading-and-using-epijson-data">
+<h1>Reading and using EpiJSON data<a class="headerlink" href="#reading-and-using-epijson-data" title="Permalink to this heading">#</a></h1>
+<p>Epidemiology data is complicated due to the many different stages a
+patient can go through and whether a modeling technique is applicable
+depends heavily on the recording of data. EpiJSON is a framework whih
+tries to captures all the information <span class="xref myst">[Finnie2016]</span>, in a JSON
+format as the name suggests.</p>
+<p>This package provides the functionality to process EpiJSON data. Due to
+the nature of this package, modeling of ode, it processes the data file
+with this in mind. The output is therefore in the cumulative form as
+default, shown below, in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> format. The input can be
+in a string format, a file or already a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<p>In [1]: from pygom.loss.read_epijson import epijson_to_data_frame</p>
+<p>In [2]: import pkgutil</p>
+<p>In [3]: data = pkgutil.get_data(‘pygom’, ‘data/eg1.json’)</p>
+<p>In [3]: df = epijson_to_data_frame(data)</p>
+<p>In [4]: print(df)</p>
+<p>Given that the aim of loading the data is usually for model fitting, we
+allow EpiJSON as input directly to the loss class
+<code class="docutils literal notranslate"><span class="pre">pygom.loss.EpijsonLoss</span></code> which uses the Poisson loss under the hood.</p>
+<p>In [1]: from pygom.model import common_models</p>
+<p>In [2]: from pygom.loss.epijson_loss import EpijsonLoss</p>
+<p>In [3]: ode = common_models.SIR([0.5, 0.3])</p>
+<p>In [4]: obj = EpijsonLoss([0.005, 0.03], ode, data, ‘Death’, ‘R’,
+[300, 2, 0])</p>
+<p>In [5]: print(obj.cost())</p>
+<p>In [6]: print(obj._df)</p>
+<p>Given an initialized object, all the operations are inherited from
+<code class="docutils literal notranslate"><span class="pre">pygom.loss.BaseLoss</span></code>. We demonstrated above how to calculate the cost
+and the rest will not be shown for brevity. The data frame is stored
+inside of the loss object and can be retrieved for inspection at any
+time point.</p>
+<p>Rather unfortunately, initial values for the states is still required,
+but the time is not. When the time is not supplied, then the first time
+point in the data will be treated as <span class="math notranslate nohighlight">\(t0\)</span>. The input <span
+class="title-ref">Death</span> indicate which column of the data is used
+and <span class="math notranslate nohighlight">\(R\)</span> the corresponding state the data belongs to.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -407,7 +435,7 @@ this automatically.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./md"
+            path: "./notebooks"
         },
         predefinedOutput: true
     }
@@ -426,20 +454,20 @@ this automatically.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notebooks/stochastic.html"
+       href="epi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stochastic representation of ODEs</p>
+        <p class="prev-next-title">Simple Epidemic Analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/unroll/unrollSimple.html"
+       href="bvpSimple.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple Problem</p>
+        <p class="prev-next-title">Solving Boundary Value Problems</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
