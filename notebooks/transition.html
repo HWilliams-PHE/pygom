@@ -415,7 +415,7 @@ document.write(`
 <p>We can define the set of ODEs, as seen previously, via</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">TransitionType</span><span class="p">,</span> <span class="n">common_models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from pygom import Transition, TransitionType, common_models</span>
 
 <span class="n">ode1</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;-beta*S*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
 
@@ -427,13 +427,14 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">TransitionType</span><span class="p">,</span> <span class="n">common_models</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ode1</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;-beta*S*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#from pygom import Transition, TransitionType, common_models</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ode1</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;-beta*S*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ode2</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;beta*S*I - gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ode3</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pygom&#39;
+<span class="ne">NameError</span>: name &#39;Transition&#39; is not defined
 </pre></div>
 </div>
 </div>
