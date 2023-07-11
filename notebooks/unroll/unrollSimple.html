@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Simple Problem &#8212; PyGOM documentation</title>
+    <title>A simple problem &#8212; PyGOM documentation</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ODE With Birth and Death Process" href="unrollBD.html" />
-    <link rel="prev" title="Convert ODE into transitions" href="../../md/unrollOde.html" />
+    <link rel="prev" title="Converting equations into transitions" href="../../md/unrollOde.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,18 +160,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../transition.html">Transition Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/unrollOde.html">Convert ODE into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Simple Problem</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/unrollOde.html">Converting equations into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">A simple problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../epi.html">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../epijson.html">Reading and using EpiJSON data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gradient.html">Gradient estimation under square loss</a></li>
@@ -369,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simple Problem</h1>
+    <h1>A simple problem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,9 +382,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simple-problem">
-<h1>Simple Problem<a class="headerlink" href="#simple-problem" title="Permalink to this heading">#</a></h1>
-<p>For a simple problem, we consider the SIR model defined by</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-simple-problem">
+<h1>A simple problem<a class="headerlink" href="#a-simple-problem" title="Permalink to this heading">#</a></h1>
+<p>For a simple problem, where we can clearly distinguish the flows from one compartment to another, we consider the SIR model defined by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \frac{dS}{dt} &amp;= -\beta SI \\
@@ -397,25 +396,48 @@ document.write(`
 rankdir=LR; size=”8” node [shape = circle]; S -&gt; I [ label = “βSI”
 ]; I -&gt; R [ label = “γI” ];</p>
 <p>}</p>
-<p>Let’s define this using the code block below</p>
-<p>In [1]: from pygom import SimulateOde, Transition, TransitionType</p>
-<p>In [2]: ode1 = Transition(origin=’S’, equation=’-beta*S*I’,
-transition_type=TransitionType.ODE)</p>
-<p>In [3]: ode2 = Transition(origin=’I’, equation=’beta*S*I -
-gamma*I’, transition_type=TransitionType.ODE)</p>
-<p>In [4]: ode3 = Transition(origin=’R’, equation=’gamma*I’,
-transition_type=TransitionType.ODE)</p>
-<p>In [6]: stateList = [‘S’, ‘I’, ‘R’]</p>
-<p>In [7]: paramList = [‘beta’, ‘gamma’]</p>
-<p>In [8]: ode = SimulateOde(stateList,<br />
-…: paramList, …: ode=[ode1, ode2, ode3])</p>
-<p>In [9]: ode.get_transition_matrix()</p>
+<p>We can define this as an ODE, as seen in {}[sir.ipynb]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">SimulateOde</span><span class="p">,</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">TransitionType</span>
+
+<span class="n">ode1</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;-beta*S*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
+
+<span class="n">ode2</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;beta*S*I - gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
+
+<span class="n">ode3</span> <span class="o">=</span> <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span>
+
+<span class="n">stateList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">]</span>
+
+<span class="n">paramList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">]</span>
+
+<span class="n">ode</span> <span class="o">=</span> <span class="n">SimulateOde</span><span class="p">(</span><span class="n">stateList</span><span class="p">,</span> <span class="n">paramList</span><span class="p">,</span> <span class="n">ode</span><span class="o">=</span><span class="p">[</span><span class="n">ode1</span><span class="p">,</span> <span class="n">ode2</span><span class="p">,</span> <span class="n">ode3</span><span class="p">])</span>
+
+<span class="n">ode</span><span class="o">.</span><span class="n">get_transition_matrix</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
 <p>and the last line shows that the transition matrix is empty. This is the
 expected result because <code class="docutils literal notranslate"><span class="pre">SimulateOdeModel</span></code> was not initialized using
-transitions. We populate the transition matrix below and demonstrate the
-difference.</p>
-<p>In [1]: ode = ode.get_unrolled_obj()</p>
-<p>In [2]: ode.get_transition_matrix()</p>
+transitions. We can populate the transition matrix by calling an algorithm to extract the flow information, and can see that the output matches that from <a class="reference internal" href="../transition.html#transition-defining-the-equations"><span class="std std-ref">Defining the equations</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ode</span> <span class="o">=</span> <span class="n">ode</span><span class="o">.</span><span class="n">get_unrolled_obj</span><span class="p">()</span>
+
+<span class="n">ode</span><span class="o">.</span><span class="n">get_transition_matrix</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0 &amp; I S \beta &amp; 0\\0 &amp; 0 &amp; I \gamma\\0 &amp; 0 &amp; 0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -455,7 +477,7 @@ difference.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Convert ODE into transitions</p>
+        <p class="prev-next-title">Converting equations into transitions</p>
       </div>
     </a>
     <a class="right-next"

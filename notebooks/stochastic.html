@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/stochastic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Convert ODE into transitions" href="../md/unrollOde.html" />
+    <link rel="next" title="Converting equations into transitions" href="../md/unrollOde.html" />
     <link rel="prev" title="Transition Object" href="transition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,18 +160,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transition.html">Transition Object</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">A simple problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="epi.html">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
@@ -439,18 +438,6 @@ seen in <a class="reference internal" href="sir.html"><span class="doc">Motivati
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">SimulateOde</span><span class="p">,</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">TransitionType</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pygom&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="stochastic-parameters">
 <h2>Stochastic Parameters<a class="headerlink" href="#stochastic-parameters" title="Permalink to this heading">#</a></h2>
@@ -516,7 +503,7 @@ using different parameters, the plots can be seen below.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ab20c75bd7c6ee640cf34904982a63506772e03a04c4b1616eab4e0c779b74f2.png" src="../_images/ab20c75bd7c6ee640cf34904982a63506772e03a04c4b1616eab4e0c779b74f2.png" />
+<img alt="../_images/8dc90aad4fa1b3845b20dfa79fe3ceb7b2ffb60ce7a1f5f25c96f5ae871d6120.png" src="../_images/8dc90aad4fa1b3845b20dfa79fe3ceb7b2ffb60ce7a1f5f25c96f5ae871d6120.png" />
 </div>
 </div>
 <p>We then see how the expected results, using the sample average of the
@@ -545,7 +532,7 @@ simulations</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/edaf46c89c79b126b3212a4b236b512c0c1cc9a324dc2ba7c19d035ea3da00a0.png" src="../_images/edaf46c89c79b126b3212a4b236b512c0c1cc9a324dc2ba7c19d035ea3da00a0.png" />
+<img alt="../_images/62eb4bc989fac2b59750254005bd0f8d5ae13cdedceb278d34620d65cdcf24a9.png" src="../_images/62eb4bc989fac2b59750254005bd0f8d5ae13cdedceb278d34620d65cdcf24a9.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -569,7 +556,7 @@ simulations</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5bc73ee726871a07756efbfcc86834065460905c685c115099ea1ec6c422183c.png" src="../_images/5bc73ee726871a07756efbfcc86834065460905c685c115099ea1ec6c422183c.png" />
+<img alt="../_images/f01bb0bce26b55bfc05a63a459d023cf3b72bfc3d70dabadf40d1ad803205b01.png" src="../_images/f01bb0bce26b55bfc05a63a459d023cf3b72bfc3d70dabadf40d1ad803205b01.png" />
 </div>
 </div>
 <p>The difference between the deterministic reference and averaged solutions is relatively large, especially for the <span class="math notranslate nohighlight">\(S\)</span> state.
@@ -634,7 +621,7 @@ parameters are stochastic.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c0aa142200428595aa44bb6588be6a7a4160105ee4702528ae9560e29d955782.png" src="../_images/c0aa142200428595aa44bb6588be6a7a4160105ee4702528ae9560e29d955782.png" />
+<img alt="../_images/c5c8872320befd199949f71e0af66ec527abf40d7dfbfcbe4525b69bcec9c740.png" src="../_images/c5c8872320befd199949f71e0af66ec527abf40d7dfbfcbe4525b69bcec9c740.png" />
 </div>
 </div>
 </section>
@@ -685,7 +672,7 @@ implemented for use during simulation; the reaction method <span class="xref mys
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a41ee48b4c02f2ffb96d803d748a3fd307285265d95928863ec35ca238282231.png" src="../_images/a41ee48b4c02f2ffb96d803d748a3fd307285265d95928863ec35ca238282231.png" />
+<img alt="../_images/6ca3985158f6b08fd694c55de8b37f018646449e49844db0b7b4761de5899247.png" src="../_images/6ca3985158f6b08fd694c55de8b37f018646449e49844db0b7b4761de5899247.png" />
 </div>
 </div>
 <p>Above, we see 10 different simulations, again using the SIR model but
@@ -718,7 +705,7 @@ ones occured.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/77d7df2c54dad550496302d8c6230ce9bfb40c9f05977928aaf8c36881d21523.png" src="../_images/77d7df2c54dad550496302d8c6230ce9bfb40c9f05977928aaf8c36881d21523.png" />
+<img alt="../_images/129b923a2a9e3d94c8be98e1507cb6c28d06544fea6509490fb775c121bdc11f.png" src="../_images/129b923a2a9e3d94c8be98e1507cb6c28d06544fea6509490fb775c121bdc11f.png" />
 </div>
 </div>
 </section>
@@ -770,7 +757,7 @@ the random number generator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Different in the simulations and the mean: (81103473.8935847, 52437230.37979218) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Different in the simulations and the mean: (75391303.45725375, 30547476.979648426) 
 Different in the simulations and the mean using same seed: (0.0, 0.0) 
 </pre></div>
 </div>
@@ -870,7 +857,7 @@ Difference in simulation using same seed: 0.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Convert ODE into transitions</p>
+        <p class="prev-next-title">Converting equations into transitions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

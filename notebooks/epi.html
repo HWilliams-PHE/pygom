@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Simple Epidemic Analysis &#8212; PyGOM documentation</title>
+    <title>Epidemic Analysis &#8212; PyGOM documentation</title>
   
   
   
@@ -160,18 +160,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transition.html">Transition Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">A simple problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
@@ -371,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simple Epidemic Analysis</h1>
+    <h1>Epidemic Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,18 +393,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simple-epidemic-analysis">
-<h1>Simple Epidemic Analysis<a class="headerlink" href="#simple-epidemic-analysis" title="Permalink to this heading">#</a></h1>
-<p>A common application of ordinary differential equations is in the field
-of epidemiology modeling. More concretely, compartmental models that is
-used to describe disease progression. We demonstrate some of the simple
-algebraic analysis one may wish to take when given a compartment model.
-Our use one of the simplest model, an SIR model with birth and death
-processes, which is an extension of the one in <code class="docutils literal notranslate"><span class="pre">sir</span></code>. First, we
-initialize the model below.</p>
-<p>In [1]: from pygom import common_models</p>
-<p>In [2]: ode = common_models.SIR_Birth_Death()</p>
-<p>In [3]: print(ode.get_ode_eqn())</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="epidemic-analysis">
+<h1>Epidemic Analysis<a class="headerlink" href="#epidemic-analysis" title="Permalink to this heading">#</a></h1>
+<p>A common application of ODEs is in the field
+of epidemiology modeling, where compartmental models are
+used to describe disease progression through a population.
+We demonstrate some of the simpler algebraic analysis that you may wish to undertake on a compartmental model.</p>
+<p>We revist the SIR model with birth and death
+processes, which is an extension of the one in <code class="docutils literal notranslate"><span class="pre">sir</span></code>.</p>
+<p>First, we initialize the model, this time by importing it from <code class="docutils literal notranslate"><span class="pre">common_models</span></code>, rather than constructing it ourselves.</p>
+<p>from pygom import common_models</p>
+<p>ode = common_models.SIR_Birth_Death()</p>
+<p>print(ode.get_ode_eqn())</p>
 <section id="obtaining-the-r0">
 <h2>Obtaining the R0<a class="headerlink" href="#obtaining-the-r0" title="Permalink to this heading">#</a></h2>
 <p>The reproduction number, also known as the <span class="math notranslate nohighlight">\(R_{0}\)</span>, is the single most

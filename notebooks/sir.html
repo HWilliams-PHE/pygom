@@ -160,18 +160,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transition.html">Transition Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Convert ODE into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">Simple Problem</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">A simple problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="epi.html">Simple Epidemic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
@@ -414,7 +413,7 @@ of the package. The SIR model is defined by the following equations</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from pygom import Transition, TransitionType</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">TransitionType</span>
 </pre></div>
 </div>
 </div>
@@ -449,20 +448,6 @@ of the package. The SIR model is defined by the following equations</p>
     <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="n">equation</span><span class="o">=</span><span class="s1">&#39;beta*S*I - gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">),</span>
     <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span> 
     <span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">odeList</span> <span class="o">=</span> <span class="p">[</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;-beta*S*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="n">equation</span><span class="o">=</span><span class="s1">&#39;beta*S*I - gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">Transition</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="n">equation</span><span class="o">=</span><span class="s1">&#39;gamma*I&#39;</span><span class="p">,</span> <span class="n">transition_type</span><span class="o">=</span><span class="n">TransitionType</span><span class="o">.</span><span class="n">ODE</span><span class="p">)</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;Transition&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -716,7 +701,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51194285eefa4a971e8a387ab7b2e125ef46610b644f753350393f6b7570ed19.png" src="../_images/51194285eefa4a971e8a387ab7b2e125ef46610b644f753350393f6b7570ed19.png" />
+<img alt="../_images/c175e1aad664d5c65466aa30d0afbb04060bb0550688fd72311e024c5a013ee4.png" src="../_images/c175e1aad664d5c65466aa30d0afbb04060bb0550688fd72311e024c5a013ee4.png" />
 </div>
 </div>
 <p>Alternatively, we can integrate and plot via the <strong>ode</strong> object which we initialized earlier.</p>
@@ -733,7 +718,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0bbd9ae219fda3e5af2c2faf5b8745cf0187f817a37553a042c31af498e6c31f.png" src="../_images/0bbd9ae219fda3e5af2c2faf5b8745cf0187f817a37553a042c31af498e6c31f.png" />
+<img alt="../_images/311da7078f4ba8c1ff6c03a0f90175d4e0d1997c60a29e5f4f99f263611bd5f4.png" src="../_images/311da7078f4ba8c1ff6c03a0f90175d4e0d1997c60a29e5f4f99f263611bd5f4.png" />
 </div>
 </div>
 <p>We could solve the ODEs above using the Jacobian as well. Unfortunately, it does not help because the number of times the Jacobian was evaluated was zero, as expected given that our set of equations are not stiff.</p>
@@ -745,7 +730,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.58 ms ± 396 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.22 ms ± 3.21 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -757,7 +742,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.84 ms ± 227 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.21 ms ± 3.22 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -769,7 +754,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.68 ms ± 161 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.23 ms ± 2.7 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -855,7 +840,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../_images/3977d0899645312aa27d27be07098459312ca2a16064752fe16688eef9d59794.png" src="../_images/3977d0899645312aa27d27be07098459312ca2a16064752fe16688eef9d59794.png" />
+<img alt="../_images/e442226005bbbf16d3e35cbf642cc8ddde9182d8630c9a206dbd5101bab662cc.png" src="../_images/e442226005bbbf16d3e35cbf642cc8ddde9182d8630c9a206dbd5101bab662cc.png" />
 </div>
 </details>
 </div>
