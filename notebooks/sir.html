@@ -454,7 +454,7 @@ of the package. The SIR model is defined by the following equations</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here, we have invoked a class from <code class="docutils literal notranslate"><span class="pre">Transition</span></code> to define the ODE object. We proceed here and ignore the details for now. The details of defining a transition object will be covered later in <a class="reference internal" href="transition.html"><span class="doc">Transition Object</span></a>. Both the set of states and parameters should be defined when constructing the object, even though not explicitly enforced, to help clarify what we are trying to model. Similarly, this holds for the rest, such as the derived parameters and transitions, where we force the end user to input the different type of transition/process via the correct argument. See <a class="reference internal" href="transition.html#transition-defining-the-equations"><span class="std std-ref">Defining the equations</span></a> for an example when the input is wrong.</p>
+<p>Here, we have invoked a class from <code class="xref py py-class docutils literal notranslate"><span class="pre">Transition</span></code> to define the ODE object. We proceed here and ignore the details for now. The details of defining a transition object will be covered later in <a class="reference internal" href="transition.html"><span class="doc">Transition Object</span></a>. Both the set of states and parameters should be defined when constructing the object, even though not explicitly enforced, to help clarify what we are trying to model. Similarly, this holds for the rest, such as the derived parameters and transitions, where we force the end user to input the different type of transition/process via the correct argument. See <a class="reference internal" href="transition.html#transition-defining-the-equations"><span class="std std-ref">Defining the equations</span></a> for an example when the input is wrong.</p>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>import the ode module</p></li>
@@ -543,9 +543,8 @@ of the package. The SIR model is defined by the following equations</p>
 </div>
 </div>
 </div>
-<p>#TODO links to unroll
-Here the SIR model was provided to PyGOM as a set ODEs by using the <code class="docutils literal notranslate"><span class="pre">Transition</span></code> to define them.<br />
-We have also provided the capability to obtain a <em>best guess</em> transition matrix when only the ODEs are available. See the section <code class="docutils literal notranslate"><span class="pre">unrollOde</span></code> for more information, and in particular <code class="docutils literal notranslate"><span class="pre">unrollSimple</span></code> for the continuing demonstration of the SIR model.</p>
+<p>Here the SIR model was provided to PyGOM as a set ODEs by using the <code class="xref py py-class docutils literal notranslate"><span class="pre">Transition</span></code> to define them.<br />
+We have also provided the capability to obtain a <em>best guess</em> transition matrix when only the ODEs are available. See the section <span class="xref std std-doc">unrollOde</span> for more information, and in particular <span class="xref std std-doc">unrollSimple</span> for the continuing demonstration of the SIR model.</p>
 </section>
 <section id="extracting-model-information">
 <h2>Extracting model information<a class="headerlink" href="#extracting-model-information" title="Permalink to this heading">#</a></h2>
@@ -606,8 +605,8 @@ We have also provided the capability to obtain a <em>best guess</em> transition 
 </div>
 </div>
 </div>
-<p>#TODO unsure if this is needed
-There is currently no mechanism to set the numeric initial conditions the states when the states are defined. This is because of an implementation issue with external package, such as solving an initial value problem.</p>
+<p>#TODO unsure if this is needed</p>
+<p>There is currently no mechanism to set the numeric initial conditions the states when the states are defined. This is because of an implementation issue with external package, such as solving an initial value problem.</p>
 </section>
 <section id="initial-value-problem">
 <h2>Initial value problem<a class="headerlink" href="#initial-value-problem" title="Permalink to this heading">#</a></h2>
@@ -730,7 +729,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.22 ms ± 2.49 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2 ms ± 1.53 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -742,7 +741,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.21 ms ± 1.79 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.19 ms ± 2.5 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -754,7 +753,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.22 ms ± 1.78 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.21 ms ± 5.85 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -844,8 +843,7 @@ There is currently no mechanism to set the numeric initial conditions the states
 </div>
 </details>
 </div>
-<p>#TODO links
-This concludes the introductory example and we will be moving on to look at parameter estimation next in <a class="reference internal" href="estimate1.html"><span class="doc">Example: Parameter Estimation 1</span></a> and the most important part in terms of setting up the ODE object; defining the equations in various different ways in <a class="reference internal" href="transition.html"><span class="doc">Transition Object</span></a>.</p>
+<p>This concludes the introductory example and we will be moving on to look at parameter estimation next in <a class="reference internal" href="estimate1.html"><span class="doc">Example: Parameter Estimation 1</span></a> and the most important part in terms of setting up the ODE object; defining the equations in various different ways in <a class="reference internal" href="transition.html"><span class="doc">Transition Object</span></a>.</p>
 </section>
 </section>
 
