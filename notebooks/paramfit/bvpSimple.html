@@ -138,8 +138,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_pygom.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_pygom.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">PyGOM documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -201,10 +207,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-model.html"># model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-loss.html"># loss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-abc.html"># approximate_bayesian_computation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-utilR.html"># utilR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-model.html">model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-loss.html">loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-abc.html">approximate_bayesian_computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-utilR.html">utilR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -617,7 +623,7 @@ replaces time <span class="math notranslate nohighlight">\(t\)</span>. Rewrite t
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">model</span><span class="o">.</span><span class="n">initial_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">::])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pygom-0.1.dev1+g746b39b.d20230830-py3.8-linux-x86_64.egg/pygom/model/base_ode_model.py:235,</span> in <span class="ni">BaseOdeModel.parameters</span><span class="nt">(self, parameters)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pygom-0.1.dev1+gb6724f5.d20230830-py3.8-linux-x86_64.egg/pygom/model/base_ode_model.py:235,</span> in <span class="ni">BaseOdeModel.parameters</span><span class="nt">(self, parameters)</span>
 <span class="g g-Whitespace">    </span><span class="mi">231</span>             <span class="k">raise</span> <span class="n">InputError</span><span class="p">(</span><span class="n">err_string</span> <span class="o">%</span> \
 <span class="g g-Whitespace">    </span><span class="mi">232</span>                              <span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_param</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="k">else</span><span class="p">:</span>
