@@ -427,7 +427,7 @@ document.write(`
 points <span class="math notranslate nohighlight">\(t_{i}\)</span>, <span class="math notranslate nohighlight">\(i = 1,\ldots,N\)</span>, we may wish to test out a set of ode
 to see whether it fits to the data. The most natural way to test such
 <em>fit</em> is to minimize the sum of squares between our observations <span class="math notranslate nohighlight">\(y\)</span> and
-see whether the resulting solution of the ode and the estimationed
+see whether the resulting solution of the ODE and the estimated
 parameters makes sense.</p>
 <p>We assume that this estimation process will be tackled through a
 non-linear optimization point of view. However, it should be noted that
@@ -437,7 +437,7 @@ the gradient, which is the focus of this page.</p>
 <p>Multiple ways of obtaining the gradient have been implemented. All of
 them serve a certain purpose and may not be a viable/appropriate options
 depending on the type of ode. More generally, let <span class="math notranslate nohighlight">\(d,p\)</span> be the number of
-states and paramters respectively. Then finite difference methods have a
+states and parameters respectively. Then finite difference methods have a
 run order of <span class="math notranslate nohighlight">\(O(p+1)\)</span> of the original ode, forward sensitivity require
 an integration of an ode of size <span class="math notranslate nohighlight">\((d+1)p\)</span> rather than <span class="math notranslate nohighlight">\(d\)</span>. The adjoint
 method require two run of size <span class="math notranslate nohighlight">\(d\)</span> in principle, but actual run time is
