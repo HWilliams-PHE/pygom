@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>.SIS_Periodic &#8212; PyGOM documentation</title>
+    <title>SIS, periodic &#8212; PyGOM documentation</title>
   
   
   
@@ -66,7 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/common_models/SIS_Periodic';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title=".SIS" href="SIS.html" />
+    <link rel="next" title=".SIR" href="SIR.html" />
+    <link rel="prev" title="SIS" href="SIS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -137,14 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../../_static/logo_pygom.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo_pygom.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">PyGOM documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -161,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sir.html">Motivating Example: SIR Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../transition.html">Transition Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stochastic.html">Stochastic representation of ODEs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../unroll/unrollSimple.html">A simple problem</a></li>
@@ -171,21 +166,49 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bvpSimple.html">Solving Boundary Value Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gradient.html">Gradient estimation under square loss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../fh.html">Example: Fitz Hugh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../estimate1.html">Example: Parameter Estimation 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../estimate2.html">Example: Parameter Estimation 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../initialGuess.html">Obtaining good initial value for parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../profile.html">Confidence Interval of Estimated Parameters</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/gradient.html">Gradient estimation under square loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/estimate1.html">Parameter Estimation: Example 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/estimate2.html">Parameter Estimation: Example 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/initialGuess.html">Obtaining good initial values for parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paramfit/profile.html">Confidence Interval of Estimated Parameters</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined examples - common epi models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SIS.html">SIS</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SIS, periodic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIR.html"><code class="docutils literal notranslate"><span class="pre">.SIR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIR_Birth_Death.html">SIR, birth and death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SEIR.html">SEIR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SEIR_Multiple.html">SEIR, multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SEIR_Birth_Death.html">SEIR - birth, death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SEIR_Birth_Death_Periodic.html">SEIR - birth, death and periodic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Legrand_Ebola_SEIHFR.html"><code class="docutils literal notranslate"><span class="pre">Legrand_Ebola_SEIHFR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lotka_Volterra.html">Lotka Volterra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lotka_Volterra_4State.html">Lotka_Volterra (4 state)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FitzHugh.html">FitzHugh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lorenz.html">Lorenz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vanDelPol.html">vanDelPol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Robertson.html">Robertson</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-model.html"># model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-loss.html"># loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-abc.html"># approximate_bayesian_computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst/autodoc-utilR.html">utilR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../md/bib.html">References</a></li>
 </ul>
 
     </div>
@@ -367,7 +390,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>.SIS_Periodic</h1>
+    <h1>SIS, periodic</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,26 +405,43 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sis-periodic">
-<h1><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code><a class="headerlink" href="#sis-periodic" title="Permalink to this heading">#</a></h1>
-<p>Now we look at an extension of the SIS model by incorporating periodic
-contact rate. Note how our equation is defined by a single ode for state
+<h1>SIS, periodic<a class="headerlink" href="#sis-periodic" title="Permalink to this heading">#</a></h1>
+<p><a class="reference internal" href="../../rst/autodoc-model.html#pygom.model.SIS_Periodic" title="pygom.model.SIS_Periodic"><code class="xref py py-func docutils literal notranslate"><span class="pre">SIS_Periodic()</span></code></a></p>
+<p>Now we look at an extension of the SIS model by incorporating a periodic
+contact rate. Note how our equation is defined by a single ODE for state
 <strong>I</strong>.</p>
 <div class="math notranslate nohighlight">
 \[\frac{dI}{dt} = (\beta(t)N - \alpha) I - \beta(t)I^{2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta(t) = 2 - 1.8 \cos(5t)\)</span>. As the name suggests, it achieves a
 (stable) periodic solution. Note how the plots have two sub-graphs,
 where <span class="math notranslate nohighlight">\(\tau\)</span> is in fact our time component which we have taken out of
-the original equation when converting it to a automonous system.</p>
-<p>In [1]: from pygom import common_models</p>
-<p>In [1]: import matplotlib.pyplot as plt</p>
-<p>In [1]: import numpy</p>
-<p>In [1]: ode = common_models.SIS_Periodic({‘alpha’:1.0})</p>
-<p>In [1]: t = numpy.linspace(0, 10, 101)</p>
-<p>In [1]: x0 = [0.1,0.]</p>
-<p>In [1]: ode.initial_values = (x0, t[0])</p>
-<p>In [1]: solution = ode.integrate(t[1::])</p>
-<p>&#64;savefig common_models_sis_periodic.png In [1]: ode.plot()</p>
-<p>In [1]: plt.close()</p>
+the original equation when converting it to a autonomous system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygom</span> <span class="kn">import</span> <span class="n">common_models</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">ode</span> <span class="o">=</span> <span class="n">common_models</span><span class="o">.</span><span class="n">SIS_Periodic</span><span class="p">({</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">})</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.</span><span class="p">]</span>
+
+<span class="n">ode</span><span class="o">.</span><span class="n">initial_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">solution</span> <span class="o">=</span> <span class="n">ode</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">::])</span>
+
+<span class="n">ode</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/39ab6067553d7ca0813947e47bc425b39699a3f52240dad4703d8812273a628f.png" src="../../_images/39ab6067553d7ca0813947e47bc425b39699a3f52240dad4703d8812273a628f.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,8 +481,17 @@ the original equation when converting it to a automonous system.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></p>
+        <p class="prev-next-title">SIS</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="SIR.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">.SIR</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

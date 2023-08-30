@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Transition Object &#8212; PyGOM documentation</title>
+    <title>Model set-up using the transition object &#8212; PyGOM documentation</title>
   
   
   
@@ -138,14 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo_pygom.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo_pygom.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">PyGOM documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transition Object</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stochastic.html">Stochastic representation of ODEs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">A simple problem</a></li>
@@ -172,21 +166,49 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bvpSimple.html">Solving Boundary Value Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gradient.html">Gradient estimation under square loss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fh.html">Example: Fitz Hugh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estimate1.html">Example: Parameter Estimation 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estimate2.html">Example: Parameter Estimation 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initialGuess.html">Obtaining good initial value for parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profile.html">Confidence Interval of Estimated Parameters</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/gradient.html">Gradient estimation under square loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/estimate1.html">Parameter Estimation: Example 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="paramfit/estimate2.html">Parameter Estimation: Example 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/initialGuess.html">Obtaining good initial values for parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paramfit/profile.html">Confidence Interval of Estimated Parameters</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined Example common_models {#common_models}</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="common_models/SIS.html"><code class="docutils literal notranslate"><span class="pre">.SIS</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_models/SIS_Periodic.html"><code class="docutils literal notranslate"><span class="pre">.SIS_Periodic</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS.html">SIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIS_Periodic.html">SIS, periodic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIR.html"><code class="docutils literal notranslate"><span class="pre">.SIR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SIR_Birth_Death.html">SIR, birth and death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SEIR.html">SEIR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SEIR_Multiple.html">SEIR, multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SEIR_Birth_Death.html">SEIR - birth, death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/SEIR_Birth_Death_Periodic.html">SEIR - birth, death and periodic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/Legrand_Ebola_SEIHFR.html"><code class="docutils literal notranslate"><span class="pre">Legrand_Ebola_SEIHFR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/Lotka_Volterra.html">Lotka Volterra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/Lotka_Volterra_4State.html">Lotka_Volterra (4 state)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/FitzHugh.html">FitzHugh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/Lorenz.html">Lorenz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/vanDelPol.html">vanDelPol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_models/Robertson.html">Robertson</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rst/autodoc-model.html"># model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/autodoc-loss.html"># loss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/autodoc-abc.html"># approximate_bayesian_computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/autodoc-utilR.html">utilR</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../md/bib.html">References</a></li>
 </ul>
 
     </div>
@@ -370,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Transition Object</h1>
+    <h1>Model set-up using the transition object</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,9 +416,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="transition-object">
-<h1>Transition Object<a class="headerlink" href="#transition-object" title="Permalink to this heading">#</a></h1>
-<p>The most important part of setting up the model is to correctly define the set ODEs, which is based solely on the classes defined in <code class="docutils literal notranslate"><span class="pre">transition</span></code>. These transitions describe how members of one state can move into another state. We choose to define the models using transitions because it enables the computer to do our bookeeping, therefore reducing the error of, for example, including a flow out of one state, but forgetting to include it in the recipient state. (This does not apply to birth and death processes.)</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-set-up-using-the-transition-object">
+<h1>Model set-up using the transition object<a class="headerlink" href="#model-set-up-using-the-transition-object" title="Permalink to this heading">#</a></h1>
+<p>The most important part of setting up the model is to correctly define the set ODEs, which is based solely on the classes defined in <code class="docutils literal notranslate"><span class="pre">transition</span></code>. These transitions describe how members of one state can move into another state. We choose to define the models using transitions because it enables the computer to do our book-keeping, therefore reducing the error of, for example, including a flow out of one state, but forgetting to include it in the recipient state. (This does not apply to birth and death processes.)</p>
 <p>All transitions that get fed into the ODE system need to be defined as a transition object, <code class="docutils literal notranslate"><span class="pre">Transition</span></code>. It takes a total of four input arguments:</p>
 <ol class="arabic simple">
 <li><p>The origin state</p></li>
