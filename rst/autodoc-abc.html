@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>approximate_bayesian_computation &#8212; PyGOM documentation</title>
   
@@ -162,15 +162,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">A simple problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/gradient.html">Gradient estimation under square loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
@@ -184,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS.html">SIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS_Periodic.html">SIS, periodic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIR.html">SIR</a></li>
@@ -202,6 +196,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/Robertson.html">Robertson</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Frequently asked questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../md/faq.html">Frequent asked questions {#faq}</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
 <ul class="current nav bd-sidenav">
@@ -414,7 +412,7 @@ document.write(`
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.approximate_bayesian_computation.</span></span><span class="sig-name descname"><span class="pre">ABC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss_object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loss_object</strong> (class <cite>BaseLoss</cite> e.g. SquareLoss) – </p></li>
 <li><p><strong>parameters</strong> (<em>list</em>) – a list of objects of class <cite>Parameter</cite></p></li>
@@ -446,7 +444,7 @@ condition should be changed to conserve the population size.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.get_posterior_sample">
 <span class="sig-name descname"><span class="pre">get_posterior_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rerun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.get_posterior_sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.get_posterior_sample" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>N</strong> (<em>integer</em>) – the number of samples in each generation</p></li>
 <li><p><strong>tol</strong> (<em>float</em><em> or </em><em>array like</em>) – the initial tolerance or sequence of decreasing tolerances</p></li>
@@ -464,7 +462,7 @@ condition should be changed to conserve the population size.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.get_posterior_sample_original">
 <span class="sig-name descname"><span class="pre">get_posterior_sample_original</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rerun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.get_posterior_sample_original"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.get_posterior_sample_original" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>N</strong> (<em>integer</em>) – the number of samples in each generation</p></li>
 <li><p><strong>tol</strong> (<em>float</em><em> or </em><em>array like</em>) – the initial tolerance or sequence of decreasing tolerances</p></li>
@@ -482,7 +480,7 @@ condition should be changed to conserve the population size.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.get_tolerance">
 <span class="sig-name descname"><span class="pre">get_tolerance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.get_tolerance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.get_tolerance" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>g</strong> (<em>integer</em>) – generation number of the ABC-SMC/MNN algorithm</p>
 </dd>
 </dl>
@@ -492,7 +490,7 @@ condition should be changed to conserve the population size.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.plot_pointwise_predictions">
 <span class="sig-name descname"><span class="pre">plot_pointwise_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_states</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ncol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.plot_pointwise_predictions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.plot_pointwise_predictions" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plot_states</strong> (<em>list</em>) – specifies which states the solution is plotted for</p></li>
 <li><p><strong>new_time</strong> (<em>array like</em>) – an array of new times to plot the model solution for. This temporarily
@@ -510,7 +508,7 @@ avoid squashed plots.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.plot_posterior_histograms">
 <span class="sig-name descname"><span class="pre">plot_posterior_histograms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ncol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.plot_posterior_histograms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.plot_posterior_histograms" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plot_param</strong> (<em>list</em>) – specifies which parameters the posterior distributions are plotted for</p></li>
 <li><p><strong>max_ncol</strong> (<em>integer</em>) – specifies the maximum number of columns in the figure, purely to
@@ -524,7 +522,7 @@ avoid squashed plots.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.plot_scatter">
 <span class="sig-name descname"><span class="pre">plot_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.plot_scatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.plot_scatter" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plot_params</strong> (<em>list</em>) – specifies which parameters should be included in the pairs plot, the list should
 ideally contain the names of two or more parameters.</p></li>
@@ -538,7 +536,7 @@ ideally contain the names of two or more parameters.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.ABC.sigma_nearest_neighbours">
 <span class="sig-name descname"><span class="pre">sigma_nearest_neighbours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#ABC.sigma_nearest_neighbours"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.ABC.sigma_nearest_neighbours" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xx</strong> (<em>array like</em>) – array of parameters</p></li>
 <li><p><strong>index</strong> (<em>integer</em>) – index of the parameter set the nearest neighbours will be found for</p></li>
@@ -553,7 +551,7 @@ ideally contain the names of two or more parameters.</p></li>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.Parameter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.approximate_bayesian_computation.</span></span><span class="sig-name descname"><span class="pre">Parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">distpars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logscale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#Parameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.Parameter" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>string specifying the name of the parameter</em>) – </p></li>
 <li><p><strong>distname</strong> (<em>string specifying the prior distribution</em>) – </p></li>
@@ -595,13 +593,17 @@ parameters: list</p>
 <dt class="sig sig-object py" id="pygom.approximate_bayesian_computation.get_function">
 <span class="sig-prename descclassname"><span class="pre">pygom.approximate_bayesian_computation.</span></span><span class="sig-name descname"><span class="pre">get_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/approximate_bayesian_computation/approximate_bayesian_computation.html#get_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.approximate_bayesian_computation.get_function" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>str</strong> (<em>name of the chosen prior distribution</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
 
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 </tbody>
 </table>
@@ -675,7 +677,7 @@ parameters: list</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Public Health England / UK Health Security Agency
+By UK Health Security Agency (previously Public Health England)
 </p>
 
   </div>

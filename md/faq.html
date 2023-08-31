@@ -7,9 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Converting equations into transitions &#8212; PyGOM documentation</title>
+    <title>Frequent asked questions {#faq} &#8212; PyGOM documentation</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'md/unrollOde';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'md/faq';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A simple problem" href="../notebooks/unroll/unrollSimple.html" />
-    <link rel="prev" title="Stochastic representation of ODEs" href="../notebooks/stochastic.html" />
+    <link rel="next" title="model" href="../rst/autodoc-model.html" />
+    <link rel="prev" title="Robertson" href="../notebooks/common_models/Robertson.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,20 +159,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Converting equations into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">A simple problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/gradient.html">Gradient estimation under square loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
@@ -184,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS.html">SIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIS_Periodic.html">SIS, periodic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/SIR.html">SIR</a></li>
@@ -202,6 +198,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/common_models/Robertson.html">Robertson</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Frequently asked questions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Frequent asked questions {#faq}</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
 <ul class="nav bd-sidenav">
@@ -284,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/unrollOde.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/faq.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/md/unrollOde.md" target="_blank"
+      <li><a href="../_sources/md/faq.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -394,11 +396,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Converting equations into transitions</h1>
+    <h1>Frequent asked questions {#faq}</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-runs-slowly">Code runs slowly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-compile-the-numeric-computation-form-sympy-against-theano">Why not compile the numeric computation form sympy against Theano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-mpmath-library-throughout">Why not use mpmath library throughout?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-gradient-using-squareloss-interpreted-text-role-class-is-slow">Computing the gradient using <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} is slow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-not-convert-a-non-autonumous-system-to-an-autonomous-system-for-me-automatically">Can you not convert a non-autonumous system to an autonomous system for me automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-sensitivities-from-squareloss-interpreted-text-role-class-did-not-get-a-speed-up-when-i-used-a-restricted-set-of-parameters">Getting the sensitivities from <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} did not get a speed up when I used a restricted set of parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-not-have-the-option-to-obtain-gradient-via-complex-differencing">Why do not have the option to obtain gradient via complex differencing</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -408,20 +424,79 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="converting-equations-into-transitions">
-<h1>Converting equations into transitions<a class="headerlink" href="#converting-equations-into-transitions" title="Permalink to this heading">#</a></h1>
-<p>As seen previously in <span class="xref std std-doc">transition</span>, we can
-define the model via the transitions or explicitly as ODEs. There are
-times when we all just want to test out some model in a paper and the
-only available information are the ODEs themselves. Even though we know
-that the ODEs come from some underlying transitions, breaking them down
-can be a time consuming process. We provide the functionalities to do
-this automatically.</p>
-<p><a class="reference internal" href="../notebooks/unroll/unrollSimple.html"><span class="doc">A simple problem</span></a></p>
-<p><a class="reference internal" href="../notebooks/unroll/unrollBD.html"><span class="doc">ODE With Birth and Death Process</span></a></p>
-<p><a class="reference internal" href="../notebooks/unroll/unrollHard.html"><span class="doc">Hard Problem</span></a></p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="frequent-asked-questions-faq">
+<h1>Frequent asked questions {#faq}<a class="headerlink" href="#frequent-asked-questions-faq" title="Permalink to this heading">#</a></h1>
+<section id="code-runs-slowly">
+<h2>Code runs slowly<a class="headerlink" href="#code-runs-slowly" title="Permalink to this heading">#</a></h2>
+<p>This is because the package is not optimized for speed. Although the
+some of the main functions are lambdified using
+<code class="docutils literal notranslate"><span class="pre">sympy</span></code>{.interpreted-text role=”mod”} or compiled against
+<code class="docutils literal notranslate"><span class="pre">cython</span></code>{.interpreted-text role=”mod”} when available, there are many
+more optimization that can be done. One example is the lines:</p>
+<p>in <code class="docutils literal notranslate"><span class="pre">.DeterministicOde.evalSensitivity</span></code>{.interpreted-text role=”func”}.
+The first two operations can be inlined into the third and the third
+line itself can be rewritten as:</p>
+<p>and save the explicit copy operation by <code class="docutils literal notranslate"><span class="pre">numpy</span></code>{.interpreted-text
+role=”mod”} when making A. If desired, we could have also made used of
+the <code class="docutils literal notranslate"><span class="pre">numexpr</span></code>{.interpreted-text role=”mod”} package that provides
+further speed up on elementwise operations in place of numpy.</p>
+</section>
+<section id="why-not-compile-the-numeric-computation-form-sympy-against-theano">
+<h2>Why not compile the numeric computation form sympy against Theano<a class="headerlink" href="#why-not-compile-the-numeric-computation-form-sympy-against-theano" title="Permalink to this heading">#</a></h2>
+<p>Setup of the package has been simplified as much as possible. If you
+look closely enough, you will realize that the current code generation
+only uses <code class="docutils literal notranslate"><span class="pre">cython</span></code>{.interpreted-text role=”mod”} and not
+<code class="docutils literal notranslate"><span class="pre">f2py</span></code>{.interpreted-text role=”mod”}. This is because we are not
+prepared to do all the system checks, i.e. does a fortran compiler
+exist, is gcc installed, was python built as a shared library etc. We
+are very much aware of the benefit, especially considering the
+possibility of GPU computation in <code class="docutils literal notranslate"><span class="pre">theano</span></code>{.interpreted-text
+role=”mod”}.</p>
+</section>
+<section id="why-not-use-mpmath-library-throughout">
+<h2>Why not use mpmath library throughout?<a class="headerlink" href="#why-not-use-mpmath-library-throughout" title="Permalink to this heading">#</a></h2>
+<p>This is because we have a fair number of operations that depends on
+<code class="docutils literal notranslate"><span class="pre">scipy</span></code>{.interpreted-text role=”mod”}. Obviously, we can solve ode using
+<code class="docutils literal notranslate"><span class="pre">mpmath</span></code>{.interpreted-text role=”mod”} and do standard linear algebra.
+Unfortunately, optimization and statistics packages and routine are
+mostly based on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>{.interpreted-text role=”mod”}.</p>
+</section>
+<section id="computing-the-gradient-using-squareloss-interpreted-text-role-class-is-slow">
+<h2>Computing the gradient using <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} is slow<a class="headerlink" href="#computing-the-gradient-using-squareloss-interpreted-text-role-class-is-slow" title="Permalink to this heading">#</a></h2>
+<p>It will always be slow on the first operation. This is due to the design
+where the initialization of the class is fast and only find derivative
+information/compile function during runtime. After the first
+calculation, things should be significantly faster.</p>
+<p><strong>Why some of my code is not a fortran object?</strong></p>
+<p>When we detec either a <span class="math notranslate nohighlight">\(\exp\)</span> or a <span class="math notranslate nohighlight">\(\log\)</span> in the equations, we
+automatically force the compile to use mpmath to ensure that we obtain
+the highest precision. To turn this on/off will be considered as a
+feature in the future.</p>
+</section>
+<section id="can-you-not-convert-a-non-autonumous-system-to-an-autonomous-system-for-me-automatically">
+<h2>Can you not convert a non-autonumous system to an autonomous system for me automatically<a class="headerlink" href="#can-you-not-convert-a-non-autonumous-system-to-an-autonomous-system-for-me-automatically" title="Permalink to this heading">#</a></h2>
+<p>Although we can do that, it is not, and will not be implemented. This is
+to ensure that the end user such as yourself are fully aware of the
+equations being defined.</p>
+</section>
+<section id="getting-the-sensitivities-from-squareloss-interpreted-text-role-class-did-not-get-a-speed-up-when-i-used-a-restricted-set-of-parameters">
+<h2>Getting the sensitivities from <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} did not get a speed up when I used a restricted set of parameters<a class="headerlink" href="#getting-the-sensitivities-from-squareloss-interpreted-text-role-class-did-not-get-a-speed-up-when-i-used-a-restricted-set-of-parameters" title="Permalink to this heading">#</a></h2>
+<p>This is because we currently evaluate the full set of sensitivities
+before extracting them out. Speeding this up for a restrictive set is
+being considered. A main reason that stopped us from implementing is
+that we find the symbolic gradient of the ode before compiling it. Which
+means that one function call to the compiled file will return the full
+set of sensitivities and we would only be extracting the appropriate
+elements from the matrix. This only amounts to a small speed up. The
+best method would be to compile only the necessary elements of the
+gradient matrix, but this would require much more work both within the
+code, and later on when variables are being added/deleted as all these
+compilation are perfromed in runtime.</p>
+</section>
+<section id="why-do-not-have-the-option-to-obtain-gradient-via-complex-differencing">
+<h2>Why do not have the option to obtain gradient via complex differencing<a class="headerlink" href="#why-do-not-have-the-option-to-obtain-gradient-via-complex-differencing" title="Permalink to this heading">#</a></h2>
+<p>It is currently not implemented. Feature under consideration.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -456,20 +531,20 @@ this automatically.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notebooks/stochastic.html"
+       href="../notebooks/common_models/Robertson.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stochastic representation of ODEs</p>
+        <p class="prev-next-title">Robertson</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/unroll/unrollSimple.html"
+       href="../rst/autodoc-model.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A simple problem</p>
+        <p class="prev-next-title">model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -483,6 +558,26 @@ this automatically.</p>
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-runs-slowly">Code runs slowly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-compile-the-numeric-computation-form-sympy-against-theano">Why not compile the numeric computation form sympy against Theano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-mpmath-library-throughout">Why not use mpmath library throughout?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-gradient-using-squareloss-interpreted-text-role-class-is-slow">Computing the gradient using <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} is slow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-not-convert-a-non-autonumous-system-to-an-autonomous-system-for-me-automatically">Can you not convert a non-autonumous system to an autonomous system for me automatically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-sensitivities-from-squareloss-interpreted-text-role-class-did-not-get-a-speed-up-when-i-used-a-restricted-set-of-parameters">Getting the sensitivities from <code class="docutils literal notranslate"><span class="pre">.SquareLoss</span></code>{.interpreted-text role=”class”} did not get a speed up when I used a restricted set of parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-not-have-the-option-to-obtain-gradient-via-complex-differencing">Why do not have the option to obtain gradient via complex differencing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -492,7 +587,7 @@ this automatically.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Public Health England / UK Health Security Agency
+By UK Health Security Agency (previously Public Health England)
 </p>
 
   </div>
