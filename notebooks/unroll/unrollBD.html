@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/unroll/unrollBD';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hard Problem" href="unrollHard.html" />
+    <link rel="prev" title="A simple problem" href="unrollSimple.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,14 +159,20 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User documentation</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../md/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stochastic.html">Stochastic representation of ODEs</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../md/unrollOde.html">Converting equations into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="unrollSimple.html">A simple problem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ODE With Birth and Death Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unrollHard.html">Hard Problem</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../paramfit/gradient.html">Gradient estimation under square loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
@@ -178,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../common_models/SIS.html">SIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../common_models/SIS_Periodic.html">SIS, periodic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../common_models/SIR.html">SIR</a></li>
@@ -460,7 +468,7 @@ processes.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/dad26db4c0c7f12778ea86ee207ea3d65b98009f0a7800b3d7248520166cdb90.png" src="../../_images/dad26db4c0c7f12778ea86ee207ea3d65b98009f0a7800b3d7248520166cdb90.png" />
-<img alt="../../_images/0c2b17b411808225879c48665a678ee27efef4db3608ada0fd042c4239c3f399.svg" src="../../_images/0c2b17b411808225879c48665a678ee27efef4db3608ada0fd042c4239c3f399.svg" /></div>
+<img alt="../../_images/cf32b925806c7426986ea33203155b464abdca10240ddb57616a8f9db87db9a0.svg" src="../../_images/cf32b925806c7426986ea33203155b464abdca10240ddb57616a8f9db87db9a0.svg" /></div>
 </div>
 </section>
 
@@ -495,6 +503,24 @@ processes.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="unrollSimple.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">A simple problem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="unrollHard.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hard Problem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

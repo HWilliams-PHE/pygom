@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Parameter fitting &#8212; PyGOM documentation</title>
+    <title>Converting equations into transitions &#8212; PyGOM documentation</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'md/parameter_fitting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'md/unrollOde';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solving Boundary Value Problems" href="../notebooks/paramfit/bvpSimple.html" />
-    <link rel="prev" title="Reading and using EpiJSON data" href="../notebooks/epijson.html" />
+    <link rel="next" title="A simple problem" href="../notebooks/unroll/unrollSimple.html" />
+    <link rel="prev" title="Stochastic representation of ODEs" href="../notebooks/stochastic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/stochastic.html">Stochastic representation of ODEs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Converting equations into transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollSimple.html">A simple problem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/unroll/unrollHard.html">Hard Problem</a></li>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Parameter fitting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/gradient.html">Gradient estimation under square loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
@@ -288,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/parameter_fitting.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ukhsa-collaboration/pygom/issues/new?title=Issue%20on%20page%20%2Fmd/unrollOde.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/md/parameter_fitting.md" target="_blank"
+      <li><a href="../_sources/md/unrollOde.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Parameter fitting</h1>
+    <h1>Converting equations into transitions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,16 +412,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="parameter-fitting">
-<h1>Parameter fitting<a class="headerlink" href="#parameter-fitting" title="Permalink to this heading">#</a></h1>
-<p>The following notebooks will demonstrate how to use the parameter fitting options within PyGOM.</p>
-<p><a class="reference internal" href="../notebooks/paramfit/bvpSimple.html"><span class="doc">Solving Boundary Value Problems</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/gradient.html"><span class="doc">Gradient estimation under square loss</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/fh.html"><span class="doc">Parameter Estimation: FitzHugh Example</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/estimate1.html"><span class="doc">Parameter Estimation: Example 1</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/estimate2.html"><span class="doc">Parameter Estimation: Example 2</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/initialGuess.html"><span class="doc">Obtaining good initial values for parameters</span></a></p>
-<p><a class="reference internal" href="../notebooks/paramfit/profile.html"><span class="doc">Confidence Interval of Estimated Parameters</span></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="converting-equations-into-transitions">
+<h1>Converting equations into transitions<a class="headerlink" href="#converting-equations-into-transitions" title="Permalink to this heading">#</a></h1>
+<p>As seen previously in <span class="xref std std-doc">transition</span>, we can
+define the model via the transitions or explicitly as ODEs. There are
+times when we all just want to test out some model in a paper and the
+only available information are the ODEs themselves. Even though we know
+that the ODEs come from some underlying transitions, breaking them down
+can be a time consuming process. We provide the functionalities to do
+this automatically.</p>
+<p><a class="reference internal" href="../notebooks/unroll/unrollSimple.html"><span class="doc">A simple problem</span></a></p>
+<p><a class="reference internal" href="../notebooks/unroll/unrollBD.html"><span class="doc">ODE With Birth and Death Process</span></a></p>
+<p><a class="reference internal" href="../notebooks/unroll/unrollHard.html"><span class="doc">Hard Problem</span></a></p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -458,20 +460,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notebooks/epijson.html"
+       href="../notebooks/stochastic.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reading and using EpiJSON data</p>
+        <p class="prev-next-title">Stochastic representation of ODEs</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/paramfit/bvpSimple.html"
+       href="../notebooks/unroll/unrollSimple.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solving Boundary Value Problems</p>
+        <p class="prev-next-title">A simple problem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/stochastic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Epidemic Analysis" href="epi.html" />
+    <link rel="next" title="Converting equations into transitions" href="../md/unrollOde.html" />
     <link rel="prev" title="Model set-up using the transition object" href="transition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,9 +164,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="sir.html">Motivating Example: SIR Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transition.html">Model set-up using the transition object</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Stochastic representation of ODEs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/unrollOde.html">Converting equations into transitions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollSimple.html">A simple problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollBD.html">ODE With Birth and Death Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unroll/unrollHard.html">Hard Problem</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="epi.html">Epidemic Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epijson.html">Reading and using EpiJSON data</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/parameter_fitting.html">Parameter fitting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="paramfit/bvpSimple.html">Solving Boundary Value Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paramfit/gradient.html">Gradient estimation under square loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paramfit/fh.html">Parameter Estimation: FitzHugh Example</a></li>
@@ -180,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Common biological compartmental models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../md/common_models.html">Pre-defined examples - common epi models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_models/SIS.html">SIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_models/SIS_Periodic.html">SIS, periodic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_models/SIR.html">SIR</a></li>
@@ -529,7 +535,7 @@ using different parameters, the plots can be seen below.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d0227575257b384ab04f0fda1a1d1604e9ec6dd87be061000afabed910233a5f.png" src="../_images/d0227575257b384ab04f0fda1a1d1604e9ec6dd87be061000afabed910233a5f.png" />
+<img alt="../_images/eb7afbea110625b19c8904baeafcc6a4ef1f0fb71168a7420c88c86bf9f779a3.png" src="../_images/eb7afbea110625b19c8904baeafcc6a4ef1f0fb71168a7420c88c86bf9f779a3.png" />
 </div>
 </div>
 <p>We then see how the expected results, using the sample average of the
@@ -558,7 +564,7 @@ simulations</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/547853a91ae33bf989fe63001993c5067d9c32283b5e743a89a27edc97438f14.png" src="../_images/547853a91ae33bf989fe63001993c5067d9c32283b5e743a89a27edc97438f14.png" />
+<img alt="../_images/1f6bb5d69dceedbf45186be6ea76eaf83d68bb31b6363c419a4a823464257653.png" src="../_images/1f6bb5d69dceedbf45186be6ea76eaf83d68bb31b6363c419a4a823464257653.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -582,7 +588,7 @@ simulations</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b981127c632575fab2b167afd8dddc4861ff8a07df03f5ab7de733e46604e847.png" src="../_images/b981127c632575fab2b167afd8dddc4861ff8a07df03f5ab7de733e46604e847.png" />
+<img alt="../_images/29db41d05cf55d9e594e9b2e7c8749bbb713a60ae25cc3eba7da83fd99e5c26e.png" src="../_images/29db41d05cf55d9e594e9b2e7c8749bbb713a60ae25cc3eba7da83fd99e5c26e.png" />
 </div>
 </div>
 <p>The difference between the deterministic reference and averaged solutions is relatively large, especially for the <span class="math notranslate nohighlight">\(S\)</span> state.
@@ -647,7 +653,7 @@ parameters are stochastic.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2bf131bf8b7111462d8dbefee7073420991c911cbbc23bac2f8d8ab0814a4fc7.png" src="../_images/2bf131bf8b7111462d8dbefee7073420991c911cbbc23bac2f8d8ab0814a4fc7.png" />
+<img alt="../_images/dd854d06c6055d0e6b4d34919cf8ab5bf65b2d0d25f0c1e741d184db3f936df5.png" src="../_images/dd854d06c6055d0e6b4d34919cf8ab5bf65b2d0d25f0c1e741d184db3f936df5.png" />
 </div>
 </div>
 </section>
@@ -698,7 +704,7 @@ implemented for use during simulation; the reaction method <span class="xref mys
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/39a8e197d29cbb888deac718ce40ebc09be4fb5abad86f71b2225a47ca89247b.png" src="../_images/39a8e197d29cbb888deac718ce40ebc09be4fb5abad86f71b2225a47ca89247b.png" />
+<img alt="../_images/eb01b1663e7db1dff1fb5355a4a18d80edcc259b714dd0417e022e7068cde4f5.png" src="../_images/eb01b1663e7db1dff1fb5355a4a18d80edcc259b714dd0417e022e7068cde4f5.png" />
 </div>
 </div>
 <p>Above, we see 10 different simulations, again using the SIR model but
@@ -731,7 +737,7 @@ ones occured.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c3b233c049ae0ce2a0ab02762f5209f5a7b7cc8b1c2ed11b2949fc5741e79f3.png" src="../_images/0c3b233c049ae0ce2a0ab02762f5209f5a7b7cc8b1c2ed11b2949fc5741e79f3.png" />
+<img alt="../_images/ddaa14cbc42d6db7b5afb2299a950723af1bd2c531cc79e3f3a00b4286275b55.png" src="../_images/ddaa14cbc42d6db7b5afb2299a950723af1bd2c531cc79e3f3a00b4286275b55.png" />
 </div>
 </div>
 </section>
@@ -783,7 +789,7 @@ the random number generator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Different in the simulations and the mean: (96307380.43603428, 32962823.879107177) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Different in the simulations and the mean: (71698847.63866445, 26378497.400251247) 
 Different in the simulations and the mean using same seed: (0.0, 0.0) 
 </pre></div>
 </div>
@@ -879,11 +885,11 @@ Difference in simulation using same seed: 0.0
       </div>
     </a>
     <a class="right-next"
-       href="epi.html"
+       href="../md/unrollOde.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Epidemic Analysis</p>
+        <p class="prev-next-title">Converting equations into transitions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
