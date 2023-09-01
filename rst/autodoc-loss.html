@@ -417,8 +417,217 @@ document.write(`
   <section id="module-pygom.loss">
 <span id="loss"></span><h1>loss<a class="headerlink" href="#module-pygom.loss" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
+<dt class="sig sig-object py" id="pygom.loss.Gamma">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">Gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Gamma" title="Permalink to this definition">#</a></dt>
+<dd><p>Gamma distribution loss object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>Shape</strong> (<em>float</em>) – shape (a in latex equations)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.Gamma.diff2Loss">
+<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Gamma.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Gamma.diff2Loss" title="Permalink to this definition">#</a></dt>
+<dd><p>Twice derivative of the loss function with respect to yhat.
+See:</p>
+<blockquote>
+<div><p>Jupiter notebook “Loss function Calculations.ipnyb”</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>scnd_deriv_yhat</strong> – <span class="math notranslate nohighlight">\(\mathcal\frac{a \left(- \hat{y} + 2 y\right)}{\hat{y}^{3}}\)</span></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.Gamma.diff_loss">
+<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Gamma.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Gamma.diff_loss" title="Permalink to this definition">#</a></dt>
+<dd><p>Derivative of the loss function with respect to yhat which is
+See:</p>
+<blockquote>
+<div><p>File “Loss function Calculations.ipnyb”</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – prediction</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>first_deriv_yhat</strong> – <span class="math notranslate nohighlight">\(\mathcal\frac{a \left(\hat{y} - y\right)}{\hat{y}^{2}}\)</span></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.Gamma.loss">
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Gamma.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Gamma.loss" title="Permalink to this definition">#</a></dt>
+<dd><p>The loss under a gamma distribution.  Defined as the negative
+log-likelihood of the gamma distirbution in terms of mean and shape.
+See: Bolker, B. M. (2008). Gamma. In Ecological Models in R (pp. 131–133).</p>
+<blockquote>
+<div><p>Princeton University Press.
+File “Loss function Calculations.ipnyb”</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – prediction</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>negative log-likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\hat{y}; y,a)\)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pygom.loss.GammaLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">GammaLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#GammaLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.GammaLoss" title="Permalink to this definition">#</a></dt>
+<dd><p>Realizations from a Gamma distribution taking parameters mean and shape.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pygom.loss.NegBinom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">NegBinom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#NegBinom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NegBinom" title="Permalink to this definition">#</a></dt>
+<dd><p>Negative Binomial distribution loss object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – Overdispersion parameter (k=mean+mean(mean/variance))</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.NegBinom.diff2Loss">
+<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#NegBinom.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NegBinom.diff2Loss" title="Permalink to this definition">#</a></dt>
+<dd><p>Twice derivative of the loss function with respect to yhat.
+See:</p>
+<blockquote>
+<div><p>Jupiter notebook “Loss function Calculations.ipnyb”
+Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126).
+Princeton University Press</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+<li><p><strong>apply_weighting</strong> – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>scnd_deriv_yhat</strong> –</p>
+<dl class="field-list simple">
+<dt class="field-odd">math</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">`</span></a>frac{k(hat{y}(k + hat{y}) + hat{y}(y -hat{y}) + (k +</dt><dd><p>hat{y})(y - hat{y})}{hat{y}^{2}(k + hat{y})^{2}}`</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.NegBinom.diff_loss">
+<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#NegBinom.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NegBinom.diff_loss" title="Permalink to this definition">#</a></dt>
+<dd><p>Derivative of the loss function with respect to yhat which is
+See:</p>
+<blockquote>
+<div><p>Jupiter notebook “Loss function Calculations.ipnyb”
+Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126).
+Princeton University Press</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation
+apply_weighting: boolean
+Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>first_deriv_yhat</strong> – <span class="math notranslate nohighlight">\(\frac{k(\hat{y}-y)}{\hat{y}(k + \hat{y})}\)</span></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygom.loss.NegBinom.loss">
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#NegBinom.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NegBinom.loss" title="Permalink to this definition">#</a></dt>
+<dd><p>The loss under a Negative Binomial distribution.  Defined as the
+negative log-likelihood of the Negative Binomial 2 distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>negative log-likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\hat{y}; y,k)\)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pygom.loss.NegBinomLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">NegBinomLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#NegBinomLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NegBinomLoss" title="Permalink to this definition">#</a></dt>
+<dd><p>Realizations from a Negative Binomial distribution</p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="pygom.loss.Normal">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">Normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">Normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal" title="Permalink to this definition">#</a></dt>
 <dd><p>Normal distribution loss object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -430,11 +639,17 @@ document.write(`
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Normal.diff2Loss">
-<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.diff2Loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.diff2Loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Twice derivative of the normal loss.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observations</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observations</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>s</strong> – inverse of the variance with shape = yhat.shape</p>
@@ -447,12 +662,16 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Normal.diff_loss">
-<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.diff_loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.diff_loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Derivative of the loss function which is
 <span class="math notranslate nohighlight">\(\sigma^{-1}(y - \hat{y})\)</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>r</strong> – <span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\hat{y}, y)\)</span></p>
@@ -465,32 +684,22 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Normal.loss">
-<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.loss" title="Permalink to this definition">#</a></dt>
 <dd><p>The loss under a normal distribution.  Defined as the
 negative log-likelihood here.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>negative log-likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\hat{y},y)\)</span></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pygom.loss.Normal.residual">
-<span class="sig-name descname"><span class="pre">residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Normal.residual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Normal.residual" title="Permalink to this definition">#</a></dt>
-<dd><p>Residuals under a normal loss</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>r</strong> – residuals</p>
+<dd class="field-even"><p><strong>negative log-likelihood,</strong> – <cite>mathcalfrac{1}{sqrt{2pi}sigma}e^{-frac{(y-hat{y})^{2}}{2sigma^{2}}</cite></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>array like</p>
+<dd class="field-odd"><p>math:</p>
 </dd>
 </dl>
 </dd></dl>
@@ -499,13 +708,13 @@ negative log-likelihood here.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pygom.loss.NormalLoss">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">NormalLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#NormalLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NormalLoss" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">NormalLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#NormalLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.NormalLoss" title="Permalink to this definition">#</a></dt>
 <dd><p>Realizations from a Normal distribution</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pygom.loss.Poisson">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">Poisson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">Poisson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson" title="Permalink to this definition">#</a></dt>
 <dd><p>Poisson distribution loss object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -514,11 +723,17 @@ negative log-likelihood here.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Poisson.diff2Loss">
-<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.diff2Loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.diff2Loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Twice derivative of the Poisson loss.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observations</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observations</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>s</strong> – <span class="math notranslate nohighlight">\(\frac{y}{\hat{y}^{2}}\)</span> with shape = yhat.shape</p>
@@ -531,11 +746,15 @@ negative log-likelihood here.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Poisson.diff_loss">
-<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.diff_loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.diff_loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Derivative of the loss function, <span class="math notranslate nohighlight">\(1 - y\hat{y}^{-1}\)</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\hat{y},y)\)</span></p>
@@ -545,32 +764,21 @@ negative log-likelihood here.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Poisson.loss">
-<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.loss" title="Permalink to this definition">#</a></dt>
 <dd><p>The loss under a Poisson distribution.  Defined as the
 negative log-likelihood here.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>negative log-likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}(\hat{y}, y)\)</span></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pygom.loss.Poisson.residual">
-<span class="sig-name descname"><span class="pre">residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Poisson.residual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Poisson.residual" title="Permalink to this definition">#</a></dt>
-<dd><p>Raw residuals</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>r</strong> – residuals</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>array like</p>
 </dd>
 </dl>
 </dd></dl>
@@ -579,7 +787,7 @@ negative log-likelihood here.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pygom.loss.PoissonLoss">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">PoissonLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#PoissonLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.PoissonLoss" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">PoissonLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/ode_loss.html#PoissonLoss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.PoissonLoss" title="Permalink to this definition">#</a></dt>
 <dd><p>Realizations from a Poisson distribution</p>
 </dd></dl>
 
@@ -594,11 +802,17 @@ negative log-likelihood here.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Square.diff2Loss">
-<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.diff2Loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff2Loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.diff2Loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.diff2Loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Twice derivative of the square loss.  Which is simply 2.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observations</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observations</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – Residuals are not used in calculation, as such True or False
+argument makes no difference. Argument has been kept as the equivalent
+calculation is made with residuals for other loss functions, so
+without it missing arguments errors could occur.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>either a scalar, vector or matrix depending on the shape of
@@ -612,13 +826,17 @@ of the input yhat</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Square.diff_loss">
-<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.diff_loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">diff_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.diff_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.diff_loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Derivative under square loss.  Assuming that we are solving
 the minimization problem i.e. our objective function is the
 negative of the log-likelihood</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(-2(y_{i} - \hat{y}_{i})\)</span></p>
@@ -628,29 +846,18 @@ negative of the log-likelihood</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pygom.loss.Square.loss">
-<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.loss" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_weighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.loss" title="Permalink to this definition">#</a></dt>
 <dd><p>Loss under square loss.  Not really saying much here</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>array like</em>) – observation</p></li>
+<li><p><strong>apply_weighting</strong> (<em>boolean</em>) – If True multiplies array of residuals by weightings, else raw
+residuals are used.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><span class="math notranslate nohighlight">\(\sum_{i=1}^{n} (\hat{y} - y)^{2}\)</span></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pygom.loss.Square.residual">
-<span class="sig-name descname"><span class="pre">residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/loss/loss_type.html#Square.residual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.Square.residual" title="Permalink to this definition">#</a></dt>
-<dd><p>Raw residuals if no weights was initialized, else
-the weighted residuals</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>yhat</strong> (<em>array like</em>) – observation</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><span class="math notranslate nohighlight">\(y_{i} - \hat{y}_{i}\)</span></p>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(\sum_{i=1}^{n} (y-\hat{y})^{2}\)</span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1185,7 +1392,7 @@ optimal using methods provided by obj</p></li>
 where <span class="math notranslate nohighlight">\(J\)</span> is the Jacobian of the ode.  ‘hessian’ is the hessian
 of the ode while ‘fisher’ is the fisher information found by
 <span class="math notranslate nohighlight">\(cov(\nabla_{\theta}\mathcal{L})\)</span>.</p></li>
-<li><p><strong>geometry</strong> (<em>string</em>) – the two types of geometry defined in <span id="id1">[Moolgavkar1987]</span>. c geometry uses
+<li><p><strong>geometry</strong> (<em>string</em>) – the two types of geometry defined in <span id="id3">[Moolgavkar1987]</span>. c geometry uses
 the covariance at the maximum likelihood estimate
 <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, while the ‘o’ geometry is the covariance
 defined at point <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
@@ -1498,15 +1705,15 @@ Boolean flag indicating if the optimizer exited successfully and
 ‘method’ parameter. The default method is the <code class="docutils literal notranslate"><span class="pre">&quot;Bounded&quot;</span></code> Brent method if
 <cite>bounds</cite> are passed and unbounded <code class="docutils literal notranslate"><span class="pre">&quot;Brent&quot;</span></code> otherwise.</p>
 <p>Method <span class="xref std std-ref">Brent</span> uses Brent’s
-algorithm <a class="footnote-reference brackets" href="#id6" id="id2">1</a> to find a local minimum.  The algorithm uses inverse
+algorithm <a class="footnote-reference brackets" href="#id8" id="id4">1</a> to find a local minimum.  The algorithm uses inverse
 parabolic interpolation when possible to speed up convergence of
 the golden section method.</p>
 <p>Method <span class="xref std std-ref">Golden</span> uses the
-golden section search technique <a class="footnote-reference brackets" href="#id6" id="id3">1</a>. It uses analog of the bisection
+golden section search technique <a class="footnote-reference brackets" href="#id8" id="id5">1</a>. It uses analog of the bisection
 method to decrease the bracketed interval. It is usually
 preferable to use the <em>Brent</em> method.</p>
 <p>Method <span class="xref std std-ref">Bounded</span> can
-perform bounded minimization <a class="footnote-reference brackets" href="#id7" id="id4">2</a> <a class="footnote-reference brackets" href="#id8" id="id5">3</a>. It uses the Brent method to find a
+perform bounded minimization <a class="footnote-reference brackets" href="#id9" id="id6">2</a> <a class="footnote-reference brackets" href="#id10" id="id7">3</a>. It uses the Brent method to find a
 local minimum in the interval x1 &lt; xopt &lt; x2.</p>
 <p><strong>Custom minimizers</strong></p>
 <p>It may be useful to pass a custom minimization method, for example
@@ -1526,16 +1733,16 @@ the method. You can find an example in the scipy.optimize tutorial.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="footnote brackets">
-<dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dt class="label" id="id8"><span class="brackets">1</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>Press, W., S.A. Teukolsky, W.T. Vetterling, and B.P. Flannery.
 Numerical Recipes in C. Cambridge University Press.</p>
 </dd>
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
 <dd><p>Forsythe, G.E., M. A. Malcolm, and C. B. Moler. “Computer Methods
 for Mathematical Computations.” Prentice-Hall Series in Automatic
 Computation 259 (1977).</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
 <dd><p>Brent, Richard P. Algorithms for Minimization Without Derivatives.
 Courier Corporation, 2013.</p>
 </dd>
@@ -1572,7 +1779,7 @@ bounds as:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pygom.loss.partial">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygom.loss.</span></span><span class="sig-name descname"><span class="pre">partial</span></span><a class="reference internal" href="../_modules/functools.html#partial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.loss.partial" title="Permalink to this definition">#</a></dt>
-<dd><p>partial(func, <a href="#id9"><span class="problematic" id="id10">*</span></a>args, <a href="#id11"><span class="problematic" id="id12">**</span></a>keywords) - new function with partial application
+<dd><p>partial(func, <a href="#id11"><span class="problematic" id="id12">*</span></a>args, <a href="#id13"><span class="problematic" id="id14">**</span></a>keywords) - new function with partial application
 of the given arguments and keywords.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pygom.loss.partial.args">

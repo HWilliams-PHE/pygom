@@ -2839,12 +2839,15 @@ define the ode model <code class="xref py py-class docutils literal notranslate"
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pygom.model.check_array_type">
-<span class="sig-prename descclassname"><span class="pre">pygom.model.</span></span><span class="sig-name descname"><span class="pre">check_array_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/model/ode_utils/checks_and_conversions.html#check_array_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.model.check_array_type" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pygom.model.</span></span><span class="sig-name descname"><span class="pre">check_array_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accept_booleans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/model/ode_utils/checks_and_conversions.html#check_array_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.model.check_array_type" title="Permalink to this definition">#</a></dt>
 <dd><p>Check to see if the type of input is suitable.  Only operate on one
 or two dimension arrays</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>array like</em>) – which can be either a <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or list or tuple</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array like</em>) – which can be either a <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or list or tuple</p></li>
+<li><p><strong>accept_boolean</strong> (<em>boolean</em>) – If true boolean elements are accepted, else they are not.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>x</strong> – checked and converted array</p>

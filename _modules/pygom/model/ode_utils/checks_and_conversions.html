@@ -368,12 +368,10 @@ document.write(`
 <span class="sd">@author: edwin.tye</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
-
-<span class="kn">from</span> <span class="nn">pygom.model._model_errors</span> <span class="kn">import</span> <span class="n">InputError</span><span class="p">,</span> <span class="n">ArrayError</span>
 
 
-<div class="viewcode-block" id="check_array_type"><a class="viewcode-back" href="../../../../rst/autodoc-model.html#pygom.model.check_array_type">[docs]</a><span class="k">def</span> <span class="nf">check_array_type</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+<div class="viewcode-block" id="check_array_type"><a class="viewcode-back" href="../../../../rst/autodoc-model.html#pygom.model.check_array_type">[docs]</a><span class="k">def</span> <span class="nf">check_array_type</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">accept_booleans</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Check to see if the type of input is suitable.  Only operate on one</span>
 <span class="sd">    or two dimension arrays</span>
@@ -382,31 +380,54 @@ document.write(`
 <span class="sd">    ----------</span>
 <span class="sd">    x: array like</span>
 <span class="sd">        which can be either a :class:`numpy.ndarray` or list or tuple</span>
+<span class="sd">    accept_boolean: boolean</span>
+<span class="sd">        If true boolean elements are accepted, else they are not.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    x: :class:`numpy.ndarray`</span>
 <span class="sd">        checked and converted array</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-
+    <span class="n">accepted_types</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">,</span><span class="nb">complex</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="n">type_error_message</span> <span class="o">=</span> <span class="s1">&#39;Expecting elements/sub-elements to be of type float, int, complex or boolean&#39;</span>
+    <span class="k">if</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+        <span class="n">type_error_message</span> <span class="o">=</span> <span class="s1">&#39;Expecting elements/sub-elements to be of type float, int or complex&#39;</span>
+        
+        
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
         <span class="k">pass</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Number</span><span class="p">):</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">accepted_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+                <span class="k">if</span>  <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;No elements of array type object should be Boolean values&#39;</span><span class="p">)</span>
                 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">ArrayError</span><span class="p">(</span><span class="s2">&quot;Expecting elements of float or int&quot;</span><span class="p">)</span>
+                <span class="ne">TypeError</span><span class="p">(</span><span class="n">type_error_message</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sub_item</span><span class="p">,</span> <span class="n">accepted_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">sub_item</span> <span class="ow">in</span> <span class="n">item</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">type_error_message</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">sub_item</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">for</span> <span class="n">sub_item</span> <span class="ow">in</span> <span class="n">item</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;No elements of array type object should be Boolean values&#39;</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">ArrayError</span><span class="p">(</span><span class="s2">&quot;Expecting elements of float or int&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">type_error_message</span> <span class="o">+</span> <span class="s1">&#39; got &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">accepted_types</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">accept_booleans</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Not expecting Boolean value&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">ArrayError</span><span class="p">(</span><span class="s2">&quot;Expecting an array like object, got </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Expecting an array like object, got </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">x</span></div>
+
 
 <div class="viewcode-block" id="check_dimension"><a class="viewcode-back" href="../../../../rst/autodoc-model.html#pygom.model.check_dimension">[docs]</a><span class="k">def</span> <span class="nf">check_dimension</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -432,8 +453,8 @@ document.write(`
     <span class="n">x</span> <span class="o">=</span> <span class="n">check_array_type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">InputError</span><span class="p">(</span><span class="s2">&quot;The number of observations and time points &quot;</span> <span class="o">+</span>
-                         <span class="s2">&quot;should have the same length&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The number of observations and time points &quot;</span> <span class="o">+</span>
+                             <span class="s2">&quot;should have the same length&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
 
@@ -478,7 +499,7 @@ document.write(`
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">InputError</span><span class="p">(</span><span class="s2">&quot;Expecting a string or list&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Expecting a string or list&quot;</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">none_or_empty_list</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>

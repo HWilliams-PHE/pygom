@@ -375,6 +375,7 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">gammaln</span>
 
 <span class="c1">###############################################################</span>
 <span class="c1">#</span>
@@ -444,6 +445,38 @@ document.write(`
         <span class="k">return</span> <span class="n">st</span><span class="o">.</span><span class="n">gamma</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="o">/</span><span class="n">rate</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">st</span><span class="o">.</span><span class="n">gamma</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="o">/</span><span class="n">rate</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="gamma_mu_shape"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.gamma_mu_shape">[docs]</a><span class="k">def</span> <span class="nf">gamma_mu_shape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span><span class="n">shape</span><span class="p">,</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    The probability density function (pdf) of gamma distrbution in terms of mean and shape. </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x: array like observation.</span>
+<span class="sd">    mu: mean or prediction.</span>
+<span class="sd">    shape: shape (a in latex equation below).</span>
+<span class="sd">    log: if True the natural log of the pmf is given.</span>
+<span class="sd">    See: Bolker, B. M. (2008). Gamma. In Ecological Models in R (pp. 131–133). Princeton University Press.</span>
+<span class="sd">         Jupyter notebook titled &quot;Loss function Calculations.ipnyb&quot;</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pdf, :math:`\\mathcal\\{p}(x; \\mu,a) = \\exp(- a \\ln{\\left(\\frac{\\mu}{a} \\right)} - \\frac{a x}{\\mu} + \\left(a - 1\\right) \\ln{\\left(x \\right)} - \\ln{\\left(\\Gamma\\left(a\\right) \\right)})`</span>
+<span class="sd">`</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">logpdf_p1</span><span class="o">=</span> <span class="o">-</span><span class="n">gammaln</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">logpdf_p2</span><span class="o">=</span> <span class="p">(</span><span class="n">shape</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">logpdf_p3</span><span class="o">=</span> <span class="o">-</span><span class="n">shape</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mu</span><span class="o">/</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">logpdf_p4</span><span class="o">=</span> <span class="o">-</span><span class="n">shape</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">mu</span>
+    <span class="n">logpdf</span> <span class="o">=</span> <span class="n">logpdf_p1</span><span class="o">+</span><span class="n">logpdf_p2</span><span class="o">+</span><span class="n">logpdf_p3</span><span class="o">+</span><span class="n">logpdf_p4</span>
+    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">logpdf</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logpdf</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ans</span></div>
 
 <div class="viewcode-block" id="pgamma"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.pgamma">[docs]</a><span class="k">def</span> <span class="nf">pgamma</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -788,11 +821,11 @@ document.write(`
         <span class="k">return</span> <span class="n">rvs</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
     
 <span class="c1">##### Negitive binomial</span>
-<div class="viewcode-block" id="dnbinom"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.dnbinom">[docs]</a><span class="k">def</span> <span class="nf">dnbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">dnbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    See</span>
 <span class="sd">    https://stat.ethz.ch/R-manual/R-devel/library/stats/html/NegBinomial.html</span>
-<span class="sd">    &#39;&#39;&#39;</span></div>
+<span class="sd">    &#39;&#39;&#39;</span>
     
 <div class="viewcode-block" id="pnbinom"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.pnbinom">[docs]</a><span class="k">def</span> <span class="nf">pnbinom</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">lower_tail</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -809,6 +842,73 @@ document.write(`
 <span class="k">def</span> <span class="nf">rnbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">pass</span>
 
+
+<span class="c1">##### Negative Binomial distribution</span>
+<div class="viewcode-block" id="nb2pmf"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.nb2pmf">[docs]</a><span class="k">def</span> <span class="nf">nb2pmf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    The probability mass function (pmf) of Negative Binomial 2 distribution.</span>
+<span class="sd">    This definition of the negative binomial distribution is often refered to as </span>
+<span class="sd">    negative binomial 2, or the ecological parameterisation. This parameterisation </span>
+<span class="sd">    takes the mean and k (an overdispersion parameter). The variance = mean(1+mean/k), </span>
+<span class="sd">    some notation uses alpha (k=1/alpha). </span>
+<span class="sd">    See: Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126). Princeton University Press.</span>
+<span class="sd">         Jupyter notebook titled &quot;Loss function Calculations.ipnyb&quot;</span>
+<span class="sd">        </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x: array like observation.</span>
+<span class="sd">    mu: mean or prediction.</span>
+<span class="sd">    k: overdispersion parameter (variance = mean(1+mean/k)). Note some notation uses $\alpha$, ($k=\alpha^{-1}$).</span>
+<span class="sd">    log: if True the natural log of the pmf is given.</span>
+<span class="sd">    See: </span>
+<span class="sd">        Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126). Princeton University Press.</span>
+<span class="sd">        File &quot;Loss function Calculations.ipnyb&quot;</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log pmf:</span>
+<span class="sd">    math:`\\mathcal\\p(x; \\mu,k)) = \\exp(\\ln(\\frac{\\Gamma \\left(k+x\\right)}{\\Gamma \\left(k\\right)x!}(\\frac{k}{k+\\mu})^{k}(\\frac{\\mu}{k+\\mu})^{x}))`</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># note that we input k the overdispersion parameter here</span>
+
+
+    <span class="n">logpmf_p1</span><span class="o">=</span> <span class="o">-</span><span class="n">gammaln</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="n">logpmf_p2</span><span class="o">=</span> <span class="o">-</span><span class="n">gammaln</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">logpmf_p3</span><span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span> 
+    <span class="n">logpmf_p4</span><span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">mu</span><span class="p">))</span>
+    <span class="n">logpmf_p5</span><span class="o">=</span> <span class="n">gammaln</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">logpmf</span> <span class="o">=</span> <span class="n">logpmf_p1</span><span class="o">+</span><span class="n">logpmf_p2</span><span class="o">+</span><span class="n">logpmf_p3</span><span class="o">+</span><span class="n">logpmf_p4</span><span class="o">+</span><span class="n">logpmf_p5</span>
+    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">ans</span><span class="o">=</span> <span class="n">logpmf</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ans</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logpmf</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ans</span></div>
+
+<div class="viewcode-block" id="dnbinom"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.dnbinom">[docs]</a><span class="k">def</span> <span class="nf">dnbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    See</span>
+<span class="sd">    https://stat.ethz.ch/R-manual/R-devel/library/stats/html/NegBinomial.html</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">mu</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prob</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Neither &#39;prob&#39; or &#39;mu&#39; were specified&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">mu</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prob</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;&#39;prob&#39; and &#39;mu&#39; both specified&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">ans</span> <span class="o">=</span><span class="n">nb2pmf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">size</span><span class="p">,</span><span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ans</span> <span class="o">=</span><span class="n">nb2pmf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">size</span><span class="p">,</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">ans</span><span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">nbinom</span><span class="o">.</span><span class="n">logpmf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ans</span><span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">nbinom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ans</span></div>
 
 <div class="viewcode-block" id="test_seed"><a class="viewcode-back" href="../../../rst/autodoc-utilR.html#pygom.utilR.test_seed">[docs]</a><span class="k">def</span> <span class="nf">test_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>

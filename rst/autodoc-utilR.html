@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'rst/autodoc-utilR';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -459,7 +461,7 @@ document.write(`
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pygom.utilR.dnbinom">
-<span class="sig-prename descclassname"><span class="pre">pygom.utilR.</span></span><span class="sig-name descname"><span class="pre">dnbinom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/utilR/distn.html#dnbinom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.utilR.dnbinom" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pygom.utilR.</span></span><span class="sig-name descname"><span class="pre">dnbinom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/utilR/distn.html#dnbinom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.utilR.dnbinom" title="Permalink to this definition">#</a></dt>
 <dd><p>See
 <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/NegBinomial.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/NegBinomial.html</a></p>
 </dd></dl>
@@ -483,6 +485,57 @@ document.write(`
 <span class="sig-prename descclassname"><span class="pre">pygom.utilR.</span></span><span class="sig-name descname"><span class="pre">dunif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/utilR/distn.html#dunif"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.utilR.dunif" title="Permalink to this definition">#</a></dt>
 <dd><p>See
 <a class="reference external" href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Uniform.html">https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Uniform.html</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pygom.utilR.gamma_mu_shape">
+<span class="sig-prename descclassname"><span class="pre">pygom.utilR.</span></span><span class="sig-name descname"><span class="pre">gamma_mu_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/utilR/distn.html#gamma_mu_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.utilR.gamma_mu_shape" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>The probability density function (pdf) of gamma distrbution in terms of mean and shape.</p>
+<p>x: array like observation.
+mu: mean or prediction.
+shape: shape (a in latex equation below).
+log: if True the natural log of the pmf is given.
+See: Bolker, B. M. (2008). Gamma. In Ecological Models in R (pp. 131–133). Princeton University Press.</p>
+<blockquote>
+<div><p>Jupyter notebook titled “Loss function Calculations.ipnyb”</p>
+</div></blockquote>
+<p>pdf, <span class="math notranslate nohighlight">\(\mathcal\{p}(x; \mu,a) = \exp(- a \ln{\left(\frac{\mu}{a} \right)} - \frac{a x}{\mu} + \left(a - 1\right) \ln{\left(x \right)} - \ln{\left(\Gamma\left(a\right) \right)})\)</span></p>
+</div></blockquote>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pygom.utilR.nb2pmf">
+<span class="sig-prename descclassname"><span class="pre">pygom.utilR.</span></span><span class="sig-name descname"><span class="pre">nb2pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygom/utilR/distn.html#nb2pmf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygom.utilR.nb2pmf" title="Permalink to this definition">#</a></dt>
+<dd><p>The probability mass function (pmf) of Negative Binomial 2 distribution.
+This definition of the negative binomial distribution is often refered to as
+negative binomial 2, or the ecological parameterisation. This parameterisation
+takes the mean and k (an overdispersion parameter). The variance = mean(1+mean/k),
+some notation uses alpha (k=1/alpha).
+See: Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126). Princeton University Press.</p>
+<blockquote>
+<div><p>Jupyter notebook titled “Loss function Calculations.ipnyb”</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array like observation.</em>) – </p></li>
+<li><p><strong>mu</strong> (<em>mean</em><em> or </em><em>prediction.</em>) – </p></li>
+<li><p><strong>k</strong> (<em>overdispersion parameter</em><em> (</em><em>variance = mean</em><em>(</em><em>1+mean/k</em><em>)</em><em>)</em><em>. Note some notation uses $lpha$</em><em>, </em><em>(</em><em>$k=lpha^{-1}$</em><em>)</em><em>.</em>) – </p></li>
+<li><p><strong>log</strong> (<em>if True the natural log of the pmf is given.</em>) – </p></li>
+<li><p><strong>See</strong> – Bolker, B. M. (2008). Negative Binomial. In Ecological Models in R (pp. 124–126). Princeton University Press.
+File “Loss function Calculations.ipnyb”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>log pmf</em></p></li>
+<li><p><strong>math</strong> (<cite>mathcalp(x; mu,k)) = exp(ln(frac{Gamma left(k+xright)}{Gamma left(kright)x!}(frac{k}{k+mu})^{k}(frac{mu}{k+mu})^{x}))</cite>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
