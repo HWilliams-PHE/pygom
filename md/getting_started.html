@@ -218,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bib.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bib.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -454,7 +454,11 @@ functionality described previously are exposed.</p>
 <p>PyGOM can be downloaded from the GitHub repository.</p>
 <p><a class="github reference external" href="https://github.com/PublicHealthEngland/pygom.git">PublicHealthEngland/pygom.git</a></p>
 <p>You will need to create an environment, for example using conda.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -f requirements.txt
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f conda-env.yml
+</pre></div>
+</div>
+<p>Alternatively, add dependencies to your own environment.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
 </pre></div>
 </div>
 <p>If you are working on a Windows machine you will also need to install:</p>
